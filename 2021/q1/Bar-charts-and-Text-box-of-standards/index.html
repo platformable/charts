@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha256-t9UJPrESBeG2ojKTIcFLPGF7nHi2vEc7f5A2KpH/UBU=" crossorigin="anonymous"></script>
+    <title>Document</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    </head>
+  <body>
+
+    <style>
+
+      body{
+       font-family: 'Roboto', sans-serif;   
+      }
+
+       #maindiv{
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+          }
+
+        
+
+        #chartdiv{
+          width:60%;
+          display: flex;
+          justify-content: flex-start;
+        }
+
+        #headerdiv{
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            width:60%;
+            color:#000000;
+            font-weight: bold;
+        }
+
+        #p{
+            color: grey;
+            font-size: 13px;
+            text-align:left;
+        }
+
+        #descdiv{
+          width:60%;
+        }
+
+
+        #header-numbers{
+          font-weight: 100;
+        }
+
+
+        .textbox{
+          display:flex;
+          flex-direction:row;
+          justify-content: center;
+          align-items: flex-start;
+          
+        }
+
+        .textbox h3{
+          color:rgb(126, 126, 126);
+          font-size: 17px;
+        }
+
+        .textbox div{
+          text-align: left;
+          padding:1em;
+        }
+
+        .textbox li{
+          font-size:14px;
+        
+        }
+
+        .textbox ul{
+          text-align: left;
+          line-height: 1.6;
+        }
+
+
+        @media only screen and (max-width:1650px)
+            {h3{
+              font-size: 18px;
+            }}
+
+        @media only screen and (max-width:1055px)
+        {
+          #headerdiv{
+          display: flex;
+          flex-direction: column-reverse;
+
+        }
+
+        h3{
+          text-align: center;
+        }
+
+        #headerdiv{
+          width:100%;
+        }
+
+        #chartdiv{
+          width:90%;
+        }
+
+        }
+
+        @media only screen and (max-width:1040px)
+        {
+          
+
+          .textbox h3{
+          color:rgb(126, 126, 126);
+          font-size: 14px;
+        }
+
+        .textbox li{
+          font-size:12px;
+        
+        }
+        }
+
+        @media only screen and (max-width:828px)
+        {
+          
+          .textbox h3{
+          color:rgb(126, 126, 126);
+          font-size: 12px;
+        }
+
+        .textbox li{
+          font-size:10px;
+        
+        }
+
+        .textbox div{
+          
+          padding:0.2em;
+        }
+
+        #headerdiv{
+          width:100%;
+        }
+
+        #chartdiv{
+          width:100%;
+        }
+
+        }
+
+        @media only screen and (max-width:670px)
+        {
+          .textbox div{
+            padding:0;
+          }
+        }
+
+        @media only screen and (max-width:657px)
+        {
+          .textbox div{
+            padding:0;
+          }
+
+          .textbox h3{
+          color:rgb(126, 126, 126);
+          font-size: 10px;
+        }
+
+        .textbox li{
+          font-size:8px;
+        
+        }
+        
+        }
+
+        @media only screen and (max-width:444px)
+        {
+          .textbox{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+          }
+
+          .textbox h3{
+          color:rgb(126, 126, 126);
+          font-size: 12px;
+        }
+
+        .textbox li{
+          font-size:10px;
+        
+        }
+          
+        }
+
+
+    </style>
+
+    <div id="maindiv">
+      <div id="headerdiv">
+          
+          <h3>Banks examples of promising practices</h3>
+          
+          <img src="./platformable-logo-blue.png" width="200px">
+      </div>
+
+      <div class="textbox">
+        <div class="listbox">
+          
+          <ul>
+            <h3>Regulated</h3>
+            <li>UK Open Banking Standards</li>
+            <li>Croatian API</li>
+            <li>Polish API</li>
+            <li>Slovak Banking API Standard<br>(voluntary)</li>
+            <li>Australian Open Banking API<br>(Consumer Data Right)</li>
+            <li>New Zealand Standard Payments API</li>
+            <li>Brazil Open Banking Manual v.1</li>
+            <li>Bahrain Open Banking API</li>
+          </ul>
+        </div>
+        <div>
+         
+          <ul>
+            <h3>Industry-Led</h3>
+            <li>The Berlin Group (Mostly European)</li>
+            <li>Open Banking</li>
+            <li>Open Banking Nigeria</li>
+            <li>STET (European, predominantly France<br> & Belgium)</li>
+            <li>Financial Data Exchange (mostly US<br> members and recently also Canada)</li>
+            
+          </ul>
+        </div>
+        <div>
+          
+          <ul>
+            <h3>API Standard Extensions</h3>
+            <li>Swift payments APIs PayLater and<br> Pre-authorization PSD2 extension API's</li>
+            <li>Open Bank Project standardised APIs <br>for greater range of functionalities that<br> also align with the Berlin Group<br> standards</li>
+          </ul>
+        </div>
+      </div>
+
+      <div id="chartdiv"><canvas id="myChart" height="550" ></canvas></div>
+     <div>
+
+        
+
+     </div>
+  </div>
+   
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@1.1.2    // exact version"></script>
+    <script>
+      
+      var ctx = document.getElementById("myChart").getContext("2d");
+      Chart.defaults.global.defaultFontColor = "rgb(0,0,0)";
+      Chart.defaults.global.defaultFontFamily= "Roboto";
+      // Chart.defaults.global.legend.padding="60"
+      var myChart = new Chart(ctx, {
+        type: "horizontalBar",
+        fontColor: "rgb(27,1,76)",
+        data: {
+          
+          labels: ["Berlin Group", "UK Open Banking Standard", "Czech Open Banking", "STET", "Financial Data Exchange (FDX) API", "Polish API", "Australian Consumer Data Rights Standard", "BISTRA", "Slovakia Banking API", "UPI", "NZ Payments Standards", "Bank's inhouse standard", "Mexico OBD Pilot", "Not sure/unknown"   ],
+          datasets: [
+            {
+              
+              
+              
+              data: [201, 33, 17, 14, 13, 9, 6, 6, 6, 5, 3, 2, 2, 182],
+              
+              backgroundColor: [
+               
+                "#ffd23f",
+                "#46BDC6",
+                "#ffd23f",
+                "#ffd23f",
+                "#1b014c",
+                "#ffd23f",
+                "#01fdf6",
+                "#ffd23f",
+                "#ffd23f",
+                "#01fdf6",
+                "#01fdf6",
+                "#01fdf6",
+                "#469556",
+                "rgb(180, 180, 180)"
+
+              ],
+              borderWidth: 0,
+            }
+            
+          ],
+        },
+        options: {
+          responsive:true,
+          maintainAspectRatio:false,
+         
+
+
+          title: {
+            display: true,
+            
+            fontSize:18
+            //padding:'5'
+        },
+          legend:{
+            display:false,
+            labels: {
+              display:false            
+          }
+        },
+          
+          
+          animation: {
+                            onComplete: function () {
+                                var chartInstance = this.chart,
+                                
+                                ctx = chartInstance.ctx;
+                                ctx.font = Chart.helpers.fontString(Chart.fontSize="13", Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
+                                ctx.textAlign = 'center';
+                                ctx.textBaseline = 'center';
+                                this.data.datasets.forEach(function (dataset, i)
+                                {
+                                    var meta = chartInstance.controller.getDatasetMeta(i);
+                            
+                                    meta.data.forEach(function (bar, index) {
+                                        var data = dataset.data[index];
+                                       
+                                        
+                                        data > 0 ? ctx.fillText(data, bar._model.x + 20, bar._model.y - 5) : ''
+                                    });
+                                });
+                            }
+                        },
+          scales: {
+            yAxes: [
+              {
+                
+                gridLines: {
+                color: "rgba(0, 0, 0, 0)",
+            },
+                barThickness : 25,
+                ticks: {
+                  
+                  fontSize:14,
+                  fontColor:"rgb(0, 0, 0)",
+              
+              
+                },
+              },
+            ],
+            xAxes: [{
+                ticks: {
+                    fontSize:14,
+                    fontColor:"rgb(0, 0, 0)",
+                }
+            }]
+          },
+        },
+      });
+
+      
+    </script>
+  </body>
+</html>

@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quarterly Number of API security incidences 2020-Q1 2021
+    </title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+
+  <body>
+    <style>
+      * {
+       font-family: "Roboto", sans-serif;
+      }
+
+      body {
+        margin: 0 auto;
+        overflow-x: hidden;
+        max-width: 1460px;
+        color: #000000;
+        font-weight: 400;
+      }
+
+      #maindiv {
+        margin: 5% auto;
+        width: 700px;
+        padding:0 5%;
+      }
+
+      #chartdiv {
+        width: 700px;
+        
+        
+      }
+
+      #headerdiv {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+        margin: 5% auto;
+      }
+
+      #Methodology {
+        text-align: left;
+        color: #7f7f7f;
+        font-size: 12px;
+        margin:5% auto;
+      }
+
+      h2 {
+        font-size: 16px;
+        
+      }
+
+      @media only screen and (max-width: 768px) {
+        #headerdiv {
+          flex-direction: column-reverse;
+          text-align: center;
+        }
+
+        #logo {
+          padding-bottom: 8%;
+        }
+      }
+
+      h2 span{
+          font-weight: 200;
+         
+      }
+
+    </style>
+
+    <div id="maindiv">
+      <div id="headerdiv">
+        <div>
+          <h2>
+            Quarterly Number of API security incidences 2020-Q1 2021
+          </h2>
+          
+        </div>
+
+        <div>
+            <a href="#"
+            ><img id="logo" src="platformable-logo-blue.png" width="210px"
+            /></a>
+        </div>
+      </div>
+      <div id="chartdiv" ><canvas id="myChart" ></canvas></div>
+      <div>
+        <p id="Methodology">
+          <strong>Methodology:</strong> ed ut perspiciatis unde omnis iste natus
+          error sit voluptatem accusantium doloremque laudantium, totam rem
+          aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
+          architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
+          voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
+          consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
+          Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
+          consectetur, adipisci velit, sed quia non numquam eius modi tempora
+          incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut
+          enim ad minima veniam, quis nostrum exercitationem ullam corporis
+          suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur
+        </p>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
+    <script>
+    
+var ctx = document.getElementById('myChart').getContext('2d');
+Chart.defaults.global.defaultFontColor = "rgb()0, 0, 0";
+
+var myChart = new Chart(ctx, {
+  
+    type: 'bar',
+    data: {
+        labels: ['Q1 2020', 'Q2 2020', 'Q3 2022', 'Q4 2020', 'Q1 2021'],
+        datasets: [{
+            label: 'Security Incidence in Open Banking',
+            data: [3, 3, 8, 3],
+            backgroundColor: [
+               "#FFD23F",
+               "#FFD23F",
+               "#FFD23F",
+               "#FFD23F"
+            ],
+            
+            borderWidth: 0
+        },
+    
+        {
+            label: 'Security Incidence in other sectors',
+            data: [31, 45, 48, 31],
+            backgroundColor: [
+              "#1B014C",
+              "#1B014C",
+              "#1B014C",
+              "#1B014C"
+            ],
+        
+            borderWidth: 0
+        }
+    ],
+    },
+    options: {
+        animation: {
+                            onComplete: function () {
+                                var chartInstance = this.chart,
+                                
+                                ctx = chartInstance.ctx;
+                                ctx.font = Chart.helpers.fontString(Chart.fontSize="13", Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
+                                ctx.textAlign = 'end';
+                                ctx.textBaseline = 'center';
+                                
+                                this.data.datasets.forEach(function (dataset, i)
+                                {
+                                    var meta = chartInstance.controller.getDatasetMeta(i);
+                            
+                                    meta.data.forEach(function (bar, index) {
+                                        var data = dataset.data[index];
+                                       
+                                        
+                                        data > 0 ? ctx.fillText(data, bar._model.x +10, bar._model.y - 10) : ''
+                                    });
+                                });
+                            }
+                        },
+        scales: {
+            yAxes: [{
+                
+                stcked:true,
+                barThickness:68,
+                
+                ticks: {
+                    fontSize:"12",
+                    beginAtZero: true,
+                    suggestedMin:60
+                }
+            }],
+            xAxes:[{
+                categoryPercentage: 0.1,
+                barPercentage: 0.5,
+                barThickness:68,
+                stacked:true,
+                ticks:{
+                    fontSize:12,
+                    suggestedMin:60
+                }
+                
+            }]
+        }
+    }
+});
+</script>
+    </script>
+  </body>
+</html>

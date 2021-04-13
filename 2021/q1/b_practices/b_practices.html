@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>B_practices</title>
+  <link rel="icon" type="image/png" href="./../general_assets/img/favicon.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!--STYLESHEET-->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Roboto", sans-serif;
+    }
+
+    html {
+      height: -webkit-fill-available;
+    }
+
+    body {
+      margin: 0 auto;
+      overflow-x: hidden;
+      max-width: 1240px;
+      /*min-height: calc(100vh - 60px - 20px);*/
+      min-height: 100%;
+      min-height: -webkit-fill-available;
+      font-size: 16px;
+    }
+
+    #chart-grid {
+      width: 800px;
+      margin: 0 auto;
+      padding: 0 2%;
+    }
+
+    header {
+      margin: 5% auto;
+      display: flex;
+      justify-content: space-between;
+      padding: 0 1%;
+    }
+
+    header h3 {
+      width: 30%;
+    }
+
+    h3 {
+      font-size: 20px;
+    }
+
+    #logo img {
+      margin: 0 auto 5%;
+      display: block;
+      text-align: center;
+    }
+
+    #chart-promising-practices {
+      padding: 5%;
+    }
+
+    .grid-item {
+      border-top: 1px solid #808080;
+      padding: 1% 0;
+    }
+
+    .grid-item h4 {
+      padding: 1% 0;
+      color: #808080;
+      font-size: 16px;
+      font-weight: bold;
+    }
+
+    .grid-item_container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .grid-img,
+    ul {
+      margin: 2% 0;
+    }
+
+    .grid-img {
+      display: flex;
+    }
+
+    img {
+      display: block;
+      height: auto;
+    }
+
+    .img-separation {
+      padding-right: 4%;
+    }
+
+    ul {
+      width: 65%;
+      list-style: none;
+      /* Remove default bullets */
+    }
+
+    ul li::before {
+      content: "\2022";
+      /* Add content: \2022 is the CSS Code/unicode for a bullet */
+      color: #7f7f7f;
+      /* Change the color */
+      font-weight: bold;
+      /* If you want it to be bold */
+      display: inline-block;
+      /* Needed to add space between the bullet and the text */
+      width: 1em;
+      /* Also needed for space (tweak if needed) */
+      margin-left: -1em;
+      /* Also needed for space (tweak if needed) */
+    }
+
+    li {
+      padding-bottom: 15px;
+      font-size: 14px;
+    }
+
+    .methodology {
+      margin: 3% auto;
+      padding-bottom: 2%;
+    }
+
+    .methodology p {
+      font-size: 12px;
+      color: #7f7f7f;
+    }
+
+    @media only screen and (max-width: 600px) {
+      header {
+        flex-direction: column-reverse;
+        text-align: center;
+      }
+
+      header h3 {
+        width: 90%;
+      }
+    }
+
+    @media only screen and (min-width: 601px) and (max-width: 768px) {
+      header h3 {
+        width: 45%;
+      }
+    }
+
+    @media only screen and (max-width: 768px) {
+      .grid-item_container {
+        flex-direction: column;
+      }
+
+      ul {
+        width: 95%;
+      }
+    }
+  </style>
+
+  <!--HTML-->
+  <div id="chart-grid">
+    <header>
+      <h3>Title ex: Bank examples of promising practices</h3>
+      <a href="./../index.html" title="back to home" id="logo"> <img src="./../general_assets/img/logo.svg"
+          alt="platformable logo with blue letters and blue square" width="160px" /></a>
+    </header>
+
+    <div id="chart-promising-practices">
+
+      <div class="grid-item">
+        <h4>Swedish Banks</h4>
+        <div class="grid-item_container">
+          <div class="grid-img">
+            <img src="assets/nordea_group.svg" alt="" width="100" style="margin-right:5px" />
+            <img src="assets/swedbank_group.svg" alt="" width="100" />
+          </div>
+
+          <ul>
+            <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum rem animi iste. Quis debitis eum
+              quisquam quod veniam. Nemo, earum quasi distinctio voluptatem deleniti possimus voluptatibus dolor vero
+              odit dolore!</li>
+            <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum rem animi iste. Quis debitis eum
+              quisquam quod veniam. Nemo, earum quasi distinctio voluptatem deleniti possimus voluptatibus dolor vero
+              odit dolore!</li>
+            <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum rem animi iste. Quis debitis eum
+              quisquam quod veniam. Nemo, earum quasi distinctio voluptatem deleniti possimus voluptatibus dolor vero
+              odit dolore!</li>
+            <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum rem animi iste. Quis debitis eum
+              quisquam quod veniam. Nemo, earum quasi distinctio voluptatem deleniti possimus voluptatibus dolor vero
+              odit dolore!</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grid-item">
+        <h4>National Bank of Greece</h4>
+        <div class="grid-item_container">
+          <div class="grid-img">
+            <img src="./assets/national_bank_of_greece_group.svg" alt="" width="100" />
+          </div>
+          <ul>
+            <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum rem animi iste. Quis debitis eum
+              quisquam quod veniam. Nemo, earum quasi distinctio voluptatem deleniti possimus voluptatibus dolor vero
+              odit dolore!</li>
+            <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum rem animi iste. Quis debitis eum
+              quisquam quod veniam. Nemo, earum quasi distinctio voluptatem deleniti possimus voluptatibus dolor vero
+              odit dolore!</li>
+            <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum rem animi iste. Quis debitis eum
+              quisquam quod veniam. Nemo, earum quasi distinctio voluptatem deleniti possimus voluptatibus dolor vero
+              odit dolore!</li>
+            <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum rem animi iste. Quis debitis eum
+              quisquam quod veniam. Nemo, earum quasi distinctio voluptatem deleniti possimus voluptatibus dolor vero
+              odit dolore!</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grid-item">
+        <h4>Standard Chartered</h4>
+        <div class="grid-item_container">
+          <div class="grid-img">
+            <img src="assets/standard_chartered_group.svg" alt="" width="100" />
+          </div>
+          <ul>
+            <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum rem animi iste. Quis debitis eum
+              quisquam quod veniam. Nemo, earum quasi distinctio voluptatem deleniti possimus voluptatibus dolor vero
+              odit dolore!</li>
+            <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum rem animi iste. Quis debitis eum
+              quisquam quod veniam. Nemo, earum quasi distinctio voluptatem deleniti possimus voluptatibus dolor vero
+              odit dolore!</li>
+            <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum rem animi iste. Quis debitis eum
+              quisquam quod veniam. Nemo, earum quasi distinctio voluptatem deleniti possimus voluptatibus dolor vero
+              odit dolore!</li>
+            <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Earum rem animi iste. Quis debitis eum
+              quisquam quod veniam. Nemo, earum quasi distinctio voluptatem deleniti possimus voluptatibus dolor vero
+              odit dolore!</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="methodology">
+      <p><strong>Methodology</strong>: 182 fintechs reported subscription revenue as their primary source of revenue
+        and
+        it was common among firms
+        offering accounting & budgeting, digital banking and account/API aggregation services. Fintechs have their
+        traditional revenue models through commissions, transactions, affiliation and interest when they are offering
+        financial services like payment, digital banking or lending services, however a large number of fintechs (268)
+        have ‘Unknown’ as their revenue model which reflects the value created through collaborations.
+        Since the openbanking standards enable the fintechs to collaborate with banks as well as build products using
+        bank
+        APIs, the revenue generated is shared among the fintechs and the banks. This could be a combination of
+        different
+        revenue streams depending on the service which could range from commission-based, freemium and data-analytic
+        sales.</p>
+    </div>
+  </div>
+</body>
+
+</html>
+<!--
+IMPORTANT
+DESIGN RULES:
+H: 15pt Bold #808080
+P: 12px regular, with bullets, paragraph distance 15px
+
+-->

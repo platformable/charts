@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>St_oas</title>
+  <link rel="icon" type="image/png" href="./../general_assets/img/favicon.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!--STYLESHEET-->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Roboto", sans-serif;
+    }
+
+    html {
+      height: -webkit-fill-available;
+    }
+
+    body {
+      margin: 0 auto;
+      min-height: 100vh;
+      min-height: -webkit-fill-available;
+      overflow-x: hidden;
+    }
+
+    #chart-grid {
+      margin: 0 auto;
+      width: 800px;
+      padding: 0 2%;
+    }
+
+    header {
+      margin: 5% auto;
+      padding: 0 1%;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    header h3 {
+      width: 40%;
+    }
+
+    h3 {
+      font-size: 20px;
+    }
+
+    #logo img {
+      margin: 0 auto 5%;
+      display: block;
+      text-align: center;
+    }
+
+    #chart-c-table {
+      padding: 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .grid-item {
+      width: 45%;
+      padding: 1% 0;
+    }
+
+    .borderlined {
+      border-top: 1px solid #808080;
+
+    }
+
+    h4,
+    h5 {
+      font-size: 16px;
+      padding: 2% 0;
+      font-weight: bold;
+    }
+
+    .grid-item h4 {
+      color: #808080;
+    }
+
+    .bank-partner {
+      margin-bottom: 3%;
+    }
+
+    .bank-partner p {
+      font-size: 0.625rem;
+    }
+
+    span {
+      font-size: 10px;
+      color: #808080;
+    }
+
+    p {
+      font-size: 14px;
+    }
+
+    .grid-item_container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .grid-img {
+      display: flex;
+      padding-bottom: 2%;
+    }
+
+    img {
+      display: block;
+      height: auto;
+    }
+
+    .grid-content {
+      width: 65%;
+    }
+
+    .methodology {
+      margin: 3% auto;
+      padding-bottom: 2%;
+    }
+
+    .methodology p {
+      font-size: 12px;
+      color: #7f7f7f;
+    }
+
+    @media only screen and (max-width: 600px) {
+      header {
+        flex-direction: column-reverse;
+        text-align: center;
+      }
+
+      header h3 {
+        width: 90%;
+      }
+
+      .grid-item_container {
+        flex-direction: column;
+      }
+    }
+
+    @media only screen and (max-width: 768px) {
+      #chart-c-table {
+        flex-direction: column;
+      }
+
+      .borderlined {
+        border: none;
+      }
+
+      .grid-item {
+        width: 95%;
+      }
+
+    }
+
+    @media only screen and (min-width: 601px) and (max-width: 768px) {
+      header h3 {
+        width: 45%;
+      }
+    }
+  </style>
+
+  <!--HTML-->
+  <div id="chart-grid">
+
+    <header>
+      <h3>Consumer financial management products built with bank APIs</h3>
+      <a href="./../index.html" title="back to home" id="logo"> <img src="./../general_assets/img/logo.svg"
+          alt="platformable logo with blue letters and blue square" width="160px" /></a>
+    </header>
+
+    <div id="chart-c-table">
+
+      <div class="grid-item">
+        <h4>Subscription Payments</h4>
+        <div class="grid-item_container">
+          <div class="grid-img">
+            <img src="assets/minna_group.svg" alt="" width="80" />
+          </div>
+
+          <div class="grid-content">
+            <h5>Mina Technologies</h5>
+            <div class="bank-partner">
+              <p><span>Bank Partner:</span> DankseBank (2.4 million customers).</p>
+              <p>SpareBank1 and SwedeBank (4.3 million customers).</p>
+            </div>
+            <div class="offers">
+              <p>Offers subscription management solution through a single platform that can be linked to one’s bank
+                account.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-item">
+        <h4>Consumer loans</h4>
+        <div class="grid-item_container">
+          <div class="grid-img">
+            <img src="assets/pravaler_group.svg" alt="" width="80" />
+          </div>
+
+          <div class="grid-content">
+            <h5>Pravaler</h5>
+            <div class="bank-partner">
+              <p><span>Bank Partner:</span> Itaú Unibanco</p>
+              <p style="visibility: hidden;">Largest fintech platform in Brazil providing education loans</p>
+            </div>
+            <div class="offers">
+              <p>Largest fintech platform in Brazil providing education loans.
+                It has also partnered with 500 higher education providers in Brazil.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-item borderlined">
+        <h4>Private Investment Management</h4>
+        <div class="grid-item_container">
+          <div class="grid-img">
+            <img src="assets/peaks_group.svg" alt="" width="80" />
+          </div>
+
+          <div class="grid-content">
+            <h5>Peaks</h5>
+            <div class="bank-partner">
+              <p><span>Bank Partner:</span> Rabobank</p>
+            </div>
+            <div class="offers">
+              <p>Transfers the spare change from the bank account to an investment account which then yields interest or
+                returns.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-item borderlined">
+        <h4>Card & Wallet Management</h4>
+        <div class="grid-item_container">
+          <div class="grid-img">
+            <img src="assets/todigo_group.svg" alt="" width="80" />
+          </div>
+
+          <div class="grid-content">
+            <h5>todito Cash</h5>
+            <div class="bank-partner">
+              <p><span>Bank Partner:</span> Railsbank and 16 others</p>
+              <p style="visibility: hidden;">Bank Partner:Itaú Unibanco</p>
+            </div>
+            <div class="offers">
+              <p>Offers a digital wallet for P2P cash transfers and Point of Sale (POS) Payments.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="methodology">
+      <p><strong>Methodology</strong>: 182 fintechs reported subscription revenue as their primary source of revenue and
+        it was common among firms
+        offering accounting & budgeting, digital banking and account/API aggregation services. Fintechs have their
+        traditional revenue models through commissions, transactions, affiliation and interest when they are offering
+        financial services like payment, digital banking or lending services, however a large number of fintechs (268)
+        have ‘Unknown’ as their revenue model which reflects the value created through collaborations.
+        Since the openbanking standards enable the fintechs to collaborate with banks as well as build products using
+        bank
+        APIs, the revenue generated is shared among the fintechs and the banks. This could be a combination of different
+        revenue streams depending on the service which could range from commission-based, freemium and data-analytic
+        sales.</p>
+    </div>
+  </div>
+
+</body>
+
+</html>
+<!--
+IMPORTANT
+Grid Title & product title: 15px bold 
+Grid Title: #808080
+
+Bank partner: 10px #808080
+Paragraph's 15px 
+line-height: 10px;
