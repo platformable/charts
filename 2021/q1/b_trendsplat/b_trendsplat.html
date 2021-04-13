@@ -80,7 +80,7 @@
     <div class="top-charts">
       <div class="title">
         <h3>Open Banking Platform Growth by Region</h3>
-        <p>QA 2018 - QA 2020</p>
+        <p>Q3 2019 - Q1 2021</p>
       </div>
       <div class="chart-icon">
         <a href="./../index.html" title="back to home" id="logo"> <img src="./../general_assets/img/logo.svg"
@@ -94,13 +94,7 @@
 
     <div class="methodology">
       <p>
-        <strong>Methodology</strong>: Platformable tracks all banks globally
-        and tallies those that have established an open API platform. We then
-        review how many API products are made available by each bank and tally
-        them according to category, and measure other API characteristics such
-        as standards and specifications used, developer experience strategies
-        employed, and business model/monetisation approaches. We review each
-        bank at least once every three months.
+        <strong>Methodology</strong>: Platformable tracks all banks globally and tallies those that have established an open API platform. We then review how many API products are made available by each bank and tally them according to category, and measure other API characteristics such as standards and specifications used, developer experience strategies employed, and business model/monetisation approaches. We review each bank at least once every three months.
       </p>
     </div>
 
@@ -112,12 +106,12 @@
     var myChart = new Chart(ctx, {
       type: 'line',
       data: {
-        labels: [' Q3 2019', 'Q1 2020', 'Q3 2020', 'Q1 2021'],
+        labels: [' Q3 2019', 'Q4 2019', 'Q1 2020', 'Q2 2020', 'Q3 2020', 'Q4 2020', 'Q1 2021'],
         datasets: [
           {
             label: 'Asia Pacific',
             fill: false,
-            data: [23, 32, 71, ''],
+            data: [23,25,32,48,71,77,86],
             backgroundColor: '#01fdf6',
             borderWidth: 1,
             borderColor: '#01fdf6',
@@ -125,7 +119,7 @@
           {
             label: 'Eastern Europe & Russia',
             fill: false,
-            data: [1, 1, 3, ''],
+            data: [1,1,1,1,3,3,2],
             backgroundColor: '#cbbaed',
             borderWidth: 1,
             borderColor: '#cbbaed',
@@ -133,7 +127,7 @@
           {
             label: 'Europe & Scandinavia',
             fill: false,
-            data: [42, 79, 262, 350],
+            data: [42,56,79,127,262,379,506],
             backgroundColor: '#ffd23f',
             borderWidth: 1,
             borderColor: '#ffd23f',
@@ -141,7 +135,7 @@
           {
             label: 'Latin America',
             fill: false,
-            data: [4, 5, 11, ''],
+            data: [4,4,5,6,11,19,28],
             backgroundColor: '#469556',
             borderWidth: 1,
             borderColor: '#469556',
@@ -149,7 +143,7 @@
           {
             label: 'Middle East & Africa',
             fill: false,
-            data: [5, 8, 34, ''],
+            data: [5,6,8,29,34,43,57],
             backgroundColor: '#fb5012',
             borderWidth: 1,
             borderColor: '#fb5012',
@@ -157,7 +151,7 @@
           {
             label: 'UK',
             fill: false,
-            data: [16, 20, 23, ''],
+            data: [16,19,20,23,23,21,25],
             backgroundColor: '#46bdc6',
             borderWidth: 1,//
             borderColor: '#46bdc6',
@@ -165,7 +159,7 @@
           {
             label: 'US & Canada',
             fill: false,
-            data: [6, 9, 25, ''],
+            data: [6,6,9,13,25,17,16],
             backgroundColor: '#1b014c',
             borderWidth: 1,
             borderColor: '#1b014c',
@@ -198,7 +192,7 @@
         plugins: {
           datalabels: {//the numbers displayed on the left at the end of each line
             font: {
-              size: '11',//IF 12 3 DIGIT NUMBERS OVERFLOW THE CHART
+              size: '10',//IF 12 3 DIGIT NUMBERS OVERFLOW THE CHART
               //family: "Hind Guntur,sans-serif",
               //weight: "600",
               lineHeight: 0,// this affects how many numbers are being displayed
@@ -240,7 +234,7 @@
               display: true,
               scaleLabel: {
                 display: true,
-                labelString: 'Q3 2018 - Q1 2021',
+                labelString: 'Q3 2019 - Q1 2021',
                 fontStyle: 'bold',
               },
               /*  gridLines: {
@@ -253,13 +247,13 @@
               display: true,
               scaleLabel: {
                 display: true,
-                labelString: 'Number of platforms', //either this or the hack
+                labelString: 'Open Banking Platforms', //either this or the hack
                 fontStyle: 'bold',
               },
               ticks: {
                 stepSize: 50,
                 min: 0,
-                max: 400, //
+               // max: 500, //
                 autoSkip: false,
                 /*  maxRotation: 90,//THIS ROTATES THE NUMBERS 
               minRotation: 90 */
