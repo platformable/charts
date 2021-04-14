@@ -79,7 +79,7 @@
 
     <div class="top-charts">
       <div class="title">
-        <h3>Open Banking API Products by Region</h3>
+        <h3>Open Banking Product Growth by Region</h3>
         <p>Q3 2019 - Q1 2021</p>
       </div>
       <div class="chart-icon">
@@ -94,13 +94,7 @@
 
     <div class="methodology">
       <p>
-        <strong>Methodology</strong>: Platformable tracks all banks globally
-        and tallies those that have established an open API platform. We then
-        review how many API products are made available by each bank and tally
-        them according to category, and measure other API characteristics such
-        as standards and specifications used, developer experience strategies
-        employed, and business model/monetisation approaches. We review each
-        bank at least once every three months.
+        <strong>Methodology</strong>: Platformable tracks all banks globally and tallies those that have established an open API platform. We then review how many API products are made available by each bank and tally them according to category, and measure other API characteristics such as standards and specifications used, developer experience strategies employed, and business model/monetisation approaches. We review each bank at least once every three months.
       </p>
     </div>
 
@@ -117,7 +111,7 @@
           {
             label: 'Asia Pacific',
             fill: false,
-            data: [186,187,541,725,1197,1471,1500],
+            data: [186,187,541,725,1197,1471,1726],
             backgroundColor: '#01fdf6',
             borderWidth: 1,
             borderColor: '#01fdf6',
@@ -125,7 +119,7 @@
           {
             label: 'Eastern Europe & Russia',
             fill: false,
-            data: [4,4,4,9,11,12,330],
+            data: [4,4,4,9,11,12,15],
             backgroundColor: '#cbbaed',
             borderWidth: 1,
             borderColor: '#cbbaed',
@@ -133,7 +127,7 @@
           {
             label: 'Europe & Scandinavia',
             fill: false,
-            data: [313,476,601,836,1048,1346,1400],
+            data: [313,476,601,836,1048,1346,1578],
             backgroundColor: '#ffd23f',
             borderWidth: 1,
             borderColor: '#ffd23f',
@@ -141,7 +135,7 @@
           {
             label: 'Latin America',
             fill: false,
-            data: [22,21,22,26,54,78,120],
+            data: [22,21,22,26,54,78,135],
             backgroundColor: '#469556',
             borderWidth: 1,
             borderColor: '#469556',
@@ -149,7 +143,7 @@
           {
             label: 'Middle East & Africa',
             fill: false,
-            data: [60,73,81,206,269,363,1530],
+            data: [60,73,81,206,269,363,386],
             backgroundColor: '#fb5012',
             borderWidth: 1,
             borderColor: '#fb5012',
@@ -157,7 +151,7 @@
           {
             label: 'UK',
             fill: false,
-            data: [70,81,90,108,132,114,250],
+            data: [70,81,90,108,132,114,118],
             backgroundColor: '#46bdc6',
             borderWidth: 1,//
             borderColor: '#46bdc6',
@@ -165,7 +159,7 @@
           {
             label: 'US & Canada',
             fill: false,
-            data: [47,47,78,85,121,112,320],
+            data: [47,47,78,85,121,112,135],
             backgroundColor: '#1b014c',
             borderWidth: 1,
             borderColor: '#1b014c',
@@ -240,7 +234,7 @@
               display: true,
               scaleLabel: {
                 display: true,
-                //labelString: 'Q3 2018 - Q1 2021',
+                labelString: 'Q3 2019 - Q1 2021',
                 fontStyle: 'bold',
               },
               /*  gridLines: {
@@ -253,13 +247,13 @@
               display: true,
               scaleLabel: {
                 display: true,
-                labelString: 'Number of products', //either this or the hack
+                labelString: 'Open Banking API Products', //either this or the hack
                 fontStyle: 'bold',
               },
               ticks: {
                 stepSize: 200,
                 min: 0,
-                max: 1800, //
+                //max: 1800, //
                 autoSkip: false,
                 /*  maxRotation: 90,//THIS ROTATES THE NUMBERS 
               minRotation: 90 */

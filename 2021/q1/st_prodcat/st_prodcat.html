@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>St_Oas_category</title>
-  <link rel="icon" type="image/png" href="./../general_assets/favicon.png">
+  <title>st_prodcat</title>
+  <link rel="icon" type="image/png" href="./../general_assets/img/favicon.png">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
@@ -63,11 +63,22 @@
       justify-content: flex-end;
       text-align: right;
     }
-    .right-legend{
+    /* 
+    .y-left-legend, .x-right-legend {
       font-size: 12px;
       font-weight: bold;
-      float: right;
+      margin: 0 auto;
     }
+
+    .y-left-legend{      
+    text-align: left;
+    transform: rotate(45deg);     
+    }
+
+    .x-right-legend{
+      text-align: center;      
+    } */
+
     .methodology {
       margin: 5% auto;
       padding-bottom: 2%;
@@ -96,7 +107,7 @@
     <div class="top-charts">
       <div class="title">
         <h3>Bank API products by category and region</h3>
-        <p>Q1 2021 (N=...)</p>
+        <p>Q1 2021 (N= 4,093)</p>
       </div>
       <div class="chart-icon">   <a href="./../index.html" title="back to home" id="logo"> <img src="./../general_assets/img/logo.svg"
         alt="platformable logo with blue letters and blue square" width="160px"/></a>
@@ -104,26 +115,17 @@
     </div>
 
     <div class="chart-container" style="position: relative; height:50vh;width: 800;">
-      <div id="st_oas_cat" style="height: 100%;; width: 800;"></div>
-      <p class="right-legend">Percentual of<br/> Product Category</p>
+      <div id="st_prodcat" style="height: 100%;; width: 800;"></div>
+     <!--  <p class="y-left-legend">Region</p>
+      <p class="x-right-legend">Proportion of Product Category (%)</p> -->
       <!--this library needs the 100% height-->
     </div>
     <div class="methodology">
-      <p><strong>Methodology</strong>: 182 fintechs reported subscription revenue as their primary source of revenue and
-        it was common among firms
-        offering accounting & budgeting, digital banking and account/API aggregation services. Fintechs have their
-        traditional revenue models through commissions, transactions, affiliation and interest when they are offering
-        financial services like payment, digital banking or lending services, however a large number of fintechs (268)
-        have ‘Unknown’ as their revenue model which reflects the value created through collaborations.
-        Since the openbanking standards enable the fintechs to collaborate with banks as well as build products using
-        bank
-        APIs, the revenue generated is shared among the fintechs and the banks. This could be a combination of different
-        revenue streams depending on the service which could range from commission-based, freemium and data-analytic
-        sales.</p>
+      <p><strong>Methodology</strong>: Platformable tracks all banks globally and tallies those that have established an open API platform. We then review how many API products are made available by each bank and tally them according to category, and measure other API characteristics such as standards and specifications used, developer experience strategies employed, and business model/monetisation approaches. We review each bank at least once every three months.</p>
     </div>
   </div>
   <script type="text/javascript">
-    var dom = document.getElementById("st_oas_cat");
+    var dom = document.getElementById("st_prodcat");
     var myChart = echarts.init(dom);
     var app = {};
 
@@ -133,21 +135,21 @@
       return {
           name: name,
           type: 'bar',
-          barWidth: 20,
-          barMinHeight: 35,
+          barWidth: 25,
+          barMinHeight: 10,
           stack: 'total',
           label: {
             show: true,
             color: '#fff',
             fontSize: 10,
-            formatter: '{c}%',
+            //formatter: '{c}%',
           },
           emphasis: {
             focus: 'series'
           },
           data:data,
         };
-    };
+    }
     option = {
         tooltip: {
         trigger: 'axis',
@@ -187,9 +189,9 @@
         type: 'value',
         axisLabel: {
           formatter: '{value} %',
-          margin: 14,
+         // margin: 14,
         },
-        //name: 'Percentual of\nProduct Category',
+        name: 'Proportion of\nProduct Category (%)',
         nameTextStyle: {
           fontWeight: 'bold',
           //lineHeight: 12,
@@ -214,16 +216,16 @@
         axisTick: {
           show: false,
         },
-        data: ['US & Canada', 'UK', 'Middle East & Africa', 'Latin America', 'Europe & Scandinavia', 'Eastern Europe & Russia', 'Asia Pacific']
+        data: ['US & Canada', 'UK', 'Middle East & Africa', 'Latin America', 'Europe & Scandinavia', 'Eastern Europe & Russia', 'Asia Pacific']//1st country on mockup is last country in chart
       },
       series: [
-        getSeries('Mandated APIs', [30,30,30,30,30,30,30]),
-        getSeries('Identity', [9,9,9,9,9,9,9]),
-        getSeries('Credit Services', [2,2,2,2,2,2,2]),
-        getSeries('Data Services', [4,4,4,4,4,4,4]),
-        getSeries('Trading', [25,25,25,25,25,25,25]),
-        getSeries('Loyalty/rewards', [15,15,15,15,15,15,15]),
-        getSeries('Other', [15,15,15,15,15,15,15]),
+        getSeries('Mandated APIs', [52,79,60,56,82,13,50]),
+        getSeries('Identity', [7,10,9,15,10,27,10]),
+        getSeries('Credit Services', [4,2,9,8,2,33,21]),
+        getSeries('Data Services', [13,2,6,13,3,0,4]),
+        getSeries('Trading', [13,0,5,1,1,0,5]),
+        getSeries('Loyalty/rewards', [2,0,2,1,0,7,2]),
+        getSeries('Other', [9,8,9,7,2,20,9]),
       ]
     };
 
