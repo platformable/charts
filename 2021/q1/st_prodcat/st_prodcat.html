@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>St_Oas_category</title>
+  <title>st_prodcat</title>
   <link rel="icon" type="image/png" href="./../general_assets/img/favicon.png">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
@@ -63,11 +63,22 @@
       justify-content: flex-end;
       text-align: right;
     }
-    .right-legend{
+    /* 
+    .y-left-legend, .x-right-legend {
       font-size: 12px;
       font-weight: bold;
-      float: right;
+      margin: 0 auto;
     }
+
+    .y-left-legend{      
+    text-align: left;
+    transform: rotate(45deg);     
+    }
+
+    .x-right-legend{
+      text-align: center;      
+    } */
+
     .methodology {
       margin: 5% auto;
       padding-bottom: 2%;
@@ -104,8 +115,9 @@
     </div>
 
     <div class="chart-container" style="position: relative; height:50vh;width: 800;">
-      <div id="st_oas_cat" style="height: 100%;; width: 800;"></div>
-      <p class="right-legend">Percentual of<br/> Product Category</p>
+      <div id="st_prodcat" style="height: 100%;; width: 800;"></div>
+     <!--  <p class="y-left-legend">Region</p>
+      <p class="x-right-legend">Proportion of Product Category (%)</p> -->
       <!--this library needs the 100% height-->
     </div>
     <div class="methodology">
@@ -113,7 +125,7 @@
     </div>
   </div>
   <script type="text/javascript">
-    var dom = document.getElementById("st_oas_cat");
+    var dom = document.getElementById("st_prodcat");
     var myChart = echarts.init(dom);
     var app = {};
 
@@ -179,7 +191,7 @@
           formatter: '{value} %',
          // margin: 14,
         },
-        //name: 'Percentual of\nProduct Category',
+        name: 'Proportion of\nProduct Category (%)',
         nameTextStyle: {
           fontWeight: 'bold',
           //lineHeight: 12,
