@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    
+    </style>
+</head>
+<body>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw==" crossorigin="anonymous"></script>
+
+    <style>
+      
+      .top-charts {
+     display:grid;
+     grid-template-columns:2fr 1fr;
+     justify-content:space-between;
+     align-items:center;
+     
+   }
+   
+   .top-charts .title {
+     font-weight:bold;
+        font-size:16px;
+   }
+   
+   .chart-icon {
+     text-align:right;
+     justify-content:flex-end;
+   }
+   .top-charts .title {
+     font-weight:bold;
+   }
+   
+   .chart-icon {
+     text-align:right;
+     justify-content:flex-end;
+   }
+   
+   .methodology {
+     font-style:italic;
+     font-size:12px;
+       margin:20px 0 8 0;
+   }
+   </style>
+    <div class="top-charts">
+      <div class="title">Product Categories for Accredited Fintechs</div>
+      <div class="chart-icon"><img src="https://platformable.com/content/images/2021/01/platformable-icon-blue.png" alt="" style="max-width:32px;"></div>
+    </div>
+    <div class="chart-container" style="position: relative; height:60vh; width:100%">
+    <canvas id="productCatFintech"></canvas>
+   
+</div>
+<div class="methodology">
+    <p>METHODOLOGY: Platformable tracks all banks globally and tallies those that have established an open API platform. We then review how many API products are made available by each bank and tally them according to category, and measure other API characteristics such as standards and specifications used, developer experience strategies employed, and business model/monetisation approaches. We review each bank at least once every three months.</p>
+  </div>
+<script>
+var ctx = document.getElementById('productCatFintech');
+Chart.defaults.global.defaultFontColor = '#1b014c';
+var myChart = new Chart(ctx, {
+    type: 'horizontalBar',
+    data: {
+        labels: [
+        'Payments',
+'Banking Operations',
+'Financial Management (Business or Personal)',
+'Lending',
+'Wealth Management',
+'Market Provision',
+'Regtech',
+'Other',
+'Business Operations',
+'Real Estate',
+'Blockchain/Crypto',
+'Insurance'
+        ],
+        datasets: [{
+            label: 'Numbers of fintechs (EU)',
+            data: [
+            92,
+            73,
+            94,
+            16,
+            25,
+            27,
+            6,
+            10,
+            5,
+            4,
+            1,
+            1
+            ],
+            backgroundColor: [
+                '#ffd23f',
+                '#ffd23f',
+                '#ffd23f',
+                '#ffd23f',
+                '#ffd23f',
+                '#ffd23f',
+                '#ffd23f',
+                '#ffd23f',
+                '#ffd23f',
+                '#ffd23f',
+                '#ffd23f',
+                '#ffd23f',
+
+      
+            ],
+            borderWidth: 0,
+            barThickness: 6,
+        maxBarThickness: 8,
+        minBarLength: 1
+        },
+    
+        {
+            label: 'Numbers of fintechs (NOT-EU)',
+            data: [
+            195,
+            49,
+            19,
+            35,
+            9,
+            3,
+            15,
+            4,
+            1,
+            2,
+            2,
+            2,
+            ],
+            backgroundColor: [
+            '#fb5012',
+            '#fb5012',
+            '#fb5012',
+            '#fb5012',
+            '#fb5012',
+            '#fb5012',
+            '#fb5012',
+            '#fb5012',
+            '#fb5012',
+            '#fb5012',
+            '#fb5012',
+            '#fb5012',
+            ],
+            borderWidth: 0,
+            barThickness: 6,
+        maxBarThickness: 8,
+        minBarLength: 1
+        }    
+    ]
+    },
+    options: {
+        responsive:true,
+        maintainAspectRatio:false,
+        title: {
+            display: true,
+            text: '',
+            fontColor:'#1b014c',
+            position:'bottom'
+        },
+        scales: {
+            yAxes: [{
+                ticks: {
+                    beginAtZero: true
+                }
+            }]
+        },
+        animation: {
+			onComplete: function () {
+				var chartInstance = this.chart,
+				ctx = chartInstance.ctx;
+				ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontSize, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
+				ctx.textAlign = 'center';
+				ctx.textBaseline = 'bottom';
+				this.data.datasets.forEach(function (dataset, i)
+				{
+                    var meta = chartInstance.controller.getDatasetMeta(i);
+            
+					meta.data.forEach(function (bar, index) {
+                        var data = dataset.data[index];
+                        data > 0 ? ctx.fillText(data, bar._model.x +10, bar._model.y - 0) : ''
+					});
+				});
+			}
+		},
+    }
+});
+</script>
+    
+</body>
+</html>
