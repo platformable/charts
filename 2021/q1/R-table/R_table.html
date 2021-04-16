@@ -46,13 +46,15 @@
     }
 
     header h3 {
-      width: 40%;
+      width: 100%;
     }
 
     h3 {
       font-size: 20px;
     }
-
+.title p{
+  font-size: 18px;
+}
     #logo img {
       margin: 0 auto 5%;
       display: block;
@@ -78,7 +80,7 @@
       margin-top: 10px;
     }
     p{
-        font-size: 14px;
+        font-size: 13px;
        
     }
 
@@ -93,7 +95,7 @@
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        align-items: center;
+        align-items: flex-start;
         padding-right: 5%;
         padding-bottom: 5%;
        width: 150px;
@@ -109,8 +111,8 @@
       display: block;
       text-align: center;
       position: relative;
-      height:30px;
-      width:48px;
+      height:20px;
+      width:35px;
 
     }
 
@@ -122,6 +124,7 @@
 
       header h3 {
         width: 90%;
+        
       }
 
      
@@ -150,17 +153,24 @@
   <!--HTML-->
   <div id="chart-grid">
     <header>
-      <h3>Key Open Banking Regulatory Development,Q1 2021</h3>
-      <a href="./../index.html" title="back to home" id="logo"> <img src="./../general_assets/img/logo.svg"
+      <div class="title">
+        <h3>Key Open Banking Regulatory Development</h3>
+        <p>Q1 2021</p>
+      </div>
+      <div>
+        <a href="./../index.html" title="back to home" id="logo"> <img src="./../general_assets/img/logo.svg"
           alt="platformable logo with blue letters and blue square" width="160px" /></a>
+      </div>
+      
     </header>
 
     <div id="chart-c-table">
+     
       <div class="grid-item"> 
         <div class="grid-item_container">
             <div class='grid-1st'>
                 <div class="grid-img">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Flag_of_Australia_%28converted%29.svg/1200px-Flag_of_Australia_%28converted%29.svg.png" id='img' alt="Australia" width="" />
+                    <img src="assest/Australia flag.png" id='img' alt="Australia" width="" />
                 </div>
                     <div>
                         <p id='country'><strong>Australia</strong></p>
@@ -171,12 +181,13 @@
             </div>
           </div>
         </div>
-        <hr>
+      <!--<hr style="width: 100%;border-top: 2px #8c8b8b;"/>--> 
+
         <div class="grid-item"> 
             <div class="grid-item_container">
                 <div class='grid-1st'>
                     <div class="grid-img">
-                        <img id='img'src="data:image/jpeg;base64,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" alt="Brazil"  />
+                        <img id='img'src="assest/Brazil flag.png" alt="Brazil"  />
                     </div>
                         <div>
                             <p id='country'><strong>Brazil</strong></p>
@@ -191,7 +202,7 @@
                 <div class="grid-item_container">
                     <div class='grid-1st'>
                         <div class="grid-img">
-                            <img src="https://www.countryflags.com/wp-content/uploads/colombia-flag-png-large.png" id='img' alt="colombia" width="" />
+                            <img src="assest/Colombia flag.png" id='img' alt="colombia" width="" />
                         </div>
                             <div>
                                 <p id='country' ><strong>Colombia</strong></p>
@@ -207,7 +218,7 @@
                     <div class="grid-item_container">
                         <div class='grid-1st'>
                             <div class="grid-img">
-                                <img id='img'src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b7/Flag_of_Europe.svg/255px-Flag_of_Europe.svg.png" alt="EU"  />
+                                <img id='img'src="assest/Europe flag.png" alt="EU"  />
                             </div>
                                 <div>
                                     <p id='country' ><strong>EU</strong></p>
@@ -222,7 +233,7 @@
                         <div class="grid-item_container">
                             <div class='grid-1st'>
                                 <div class="grid-img">
-                                    <img src="data:image/png;base64,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" id='img' alt="Kenya" width="" />
+                                    <img src="assest/Kenya map.png" id='img' alt="Kenya" width="" />
                                 </div>
                                     <div>
                                         <p id='country'><strong>Kenya</strong></p>
@@ -238,7 +249,7 @@
                             <div class="grid-item_container">
                                 <div class='grid-1st'>
                                     <div class="grid-img">
-                                        <img id='img'src="data:image/jpeg;base64,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" alt="Nigeria"  />
+                                        <img id='img'src="assest/Nigeria flag.png" alt="Nigeria"  />
                                     </div>
                                         <div>
                                             <p id='country'><strong>Nigeria</strong></p>
@@ -253,7 +264,7 @@
                                 <div class="grid-item_container">
                                     <div class='grid-1st'>
                                         <div class="grid-img">
-                                            <img src="https://static.vecteezy.com/system/resources/previews/000/114/048/non_2x/free-vector-pakistan-flag.jpg" id='img' alt="Pakistan" width="" />
+                                            <img src="assest/Pakistan flag.png" id='img' alt="Pakistan" width="" />
                                         </div>
                                             <div>
                                                 <p id='country'><strong>Pakistan</strong></p>
@@ -270,7 +281,7 @@
                                     <div class="grid-item_container">
                                         <div class='grid-1st'>
                                             <div class="grid-img">
-                                                <img id='img'src="https://static.wikia.nocookie.net/2012movie/images/5/53/Russia_Flag.jpg/revision/latest?cb=20200618001612" alt="Russia"  />
+                                                <img id='img'src="assest/Russia flag.png" alt="Russia"  />
                                             </div>
                                                 <div>
                                                     <p id='country'><strong>Russia</strong></p>
@@ -285,7 +296,7 @@
                                         <div class="grid-item_container">
                                             <div class='grid-1st'>
                                                 <div class="grid-img">
-                                                    <img src="https://cdn.britannica.com/79/5779-004-491EE13C/Flag-Saudi-Arabia.jpg" id='img' alt="Saudi Arabia" width="" />
+                                                    <img src="assest/Saudi Arabia flag.png" id='img' alt="Saudi Arabia" width="" />
                                                 </div>
                                                     <div>
                                                         <p id='country'><strong>Saudi Arabia</strong></p>
@@ -301,7 +312,7 @@
                                             <div class="grid-item_container">
                                                 <div class='grid-1st'>
                                                     <div class="grid-img">
-                                                        <img id='img'src="https://cdn.britannica.com/200x500/49/1949-050-39ED83BA/Flag-South-Korea.jpg" alt="South Korea"  />
+                                                        <img id='img'src="assest/South Korea flag.png" alt="South Korea"  />
                                                     </div>
                                                         <div>
                                                             <p id='country'><strong>South Korea</strong></p>
@@ -316,7 +327,7 @@
                                                 <div class="grid-item_container">
                                                     <div class='grid-1st'>
                                                         <div class="grid-img">
-                                                            <img src="https://www.countryflags.com/wp-content/uploads/taiwan-flag-png-large.png" id='img' alt="Taiwan" width="" />
+                                                            <img src="assest/Taiwan map.png" id='img' alt="Taiwan" width="" />
                                                         </div>
                                                             <div>
                                                                 <p id='country'><strong>Taiwan</strong></p>
@@ -332,7 +343,7 @@
                                                     <div class="grid-item_container">
                                                         <div class='grid-1st'>
                                                             <div class="grid-img">
-                                                                <img id='img'src="https://upload.wikimedia.org/wikipedia/en/thumb/a/ae/Flag_of_the_United_Kingdom.svg/1200px-Flag_of_the_United_Kingdom.svg.png" alt="UK"  />
+                                                                <img id='img'src="assest/Uk flag.png" alt="UK"  />
                                                             </div>
                                                                 <div>
                                                                     <p id='country'><strong>UK</strong></p>
@@ -348,7 +359,7 @@
                                                         <div class="grid-item_container">
                                                             <div class='grid-1st'>
                                                                 <div class="grid-img">
-                                                                    <img id='img'src="https://upload.wikimedia.org/wikipedia/en/thumb/a/a4/Flag_of_the_United_States.svg/1200px-Flag_of_the_United_States.svg.png" alt="USA"  />
+                                                                    <img id='img'src="assest/USA flag.png" alt="USA"  />
                                                                 </div>
                                                                     <div>
                                                                         <p id='country'><strong>USA</strong></p>
