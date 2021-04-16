@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>st_bariso
+  </title>
+  <link rel="icon" type="image/png" href="./../general_assets/img/favicon.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Roboto", sans-serif;
+    }
+    html {
+      height: -webkit-fill-available;
+    }
+
+    body {
+      margin: 0 auto;
+      min-height: 100vh;
+      min-height: -webkit-fill-available;
+      overflow-x: hidden;
+    }
+    #chart {
+      margin: 5% auto;
+      padding: 0 5%;
+      width: 800px;
+    }
+
+    .chart-container {
+      margin: 0 auto;
+    }
+    
+    .top-charts {
+      margin: 5% auto;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .title {
+      width: 60%;
+    }
+    .title h3 {
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    .chart-icon {
+      text-align: right;
+      justify-content: flex-end;
+    }
+
+    .methodology {
+      margin: 3% auto;
+    }
+
+    .methodology p {
+      font-size: 12px;
+      color: #7f7f7f;
+    }
+
+    h2 {
+      font-size: 16px;
+    }
+
+    @media only screen and (max-width: 600px){
+      .top-charts {
+      flex-direction: column;
+    }
+    .title {
+      width: 85%;
+    }
+    .title,.chart-icon  {
+      text-align: center;
+      padding: 2%;
+    }
+    }
+
+
+  </style>
+
+  <!--HTML-->
+  <div id="chart">
+    <div class="top-charts">
+      <div class="title">
+        <h3>Global Open Banking Platforms Use of ISO Standards in API Design</h3>
+        <p>Q1 2021 (N = 720)</p>
+      </div>
+      <div class="chart-icon">
+        <a href="./../index.html" title="back to home" id="logo"> <img src="./../general_assets/img/logo.svg"
+            alt="platformable logo with blue letters and blue square" width="160px" /></a>
+      </div>
+    </div>
+
+    <div class="chart-container" style="width: 800;">
+      <canvas id="st_bariso"></canvas>
+    </div>
+
+    <div class="methodology">
+      <p>
+        <strong>Methodology</strong>: Platformable tracks all banks globally and tallies those that have established an
+        open API platform. We then review how many API products are made available by each bank and tally them according
+        to category, and measure other API characteristics such as standards and specifications used, developer
+        experience strategies employed, and business model/monetisation approaches. We review each bank at least once
+        every three months.
+      </p>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js">
+  </script>
+
+  <script>
+    var ctx = document.getElementById('st_bariso').getContext('2d');
+    Chart.defaults.global.defaultFontColor = "#1B014C";
+    var myChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: [
+          ["ISO 4217", "(currency)"],
+          ["ISO 8601", "(date YYYYMMDD)"],
+          ["ISO 3166", "(country)"],
+          ["ISO 20022", "(payments-frequency described)"],
+        ],
+        datasets: [{
+          label: "N° of Platforms",
+          data: [539, 536, 392, 321],
+          backgroundColor: [
+            "#FFD23F",
+            "#FFD23F",
+            "#FFD23F",
+            "#FFD23F"
+          ],
+          borderWidth: 0,
+          barThickness: 84,
+        },
+        ],
+      },
+      options: {
+        animation: {
+          onComplete: function () {
+            var chartInstance = this.chart,
+              ctx = chartInstance.ctx;
+            ctx.font = Chart.helpers.fontString(Chart.fontSize = "12", Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'center';
+            this.data.datasets.forEach(function (dataset, i) {
+              var meta = chartInstance.controller.getDatasetMeta(i);
+              meta.data.forEach(function (bar, index) {
+                var data = dataset.data[index];
+                data > 0 ? ctx.fillText(data, bar._model.x + 3, bar._model.y - 10) : ''
+              });
+            });
+          }
+        },
+        title: {
+          display: true,
+          fontSize: 18,
+        },
+        legend: {
+          display: false,
+          fontSize: '12',
+          boxWidth: 0,
+          fontStyle: 'bold',
+          labels: {
+          }
+        },
+        scales: {
+          yAxes: [{
+            /*  barThickness:68, */
+            ticks: {
+              display: false,
+              /*   fontSize:"12",
+                beginAtZero: true,
+                suggestedMin:60 */
+            }
+
+          }],
+          xAxes: [{
+            categoryPercentage: 0.1,
+            barPercentage: 0.5,
+            barThickness: 84,
+            ticks: {
+              fontSize: 10,
+              fontStyle: 'bold',
+            },
+            gridLines: {
+              display: false
+            }
+          }]
+        }
+      }
+    });
+  </script>
+</body>
+
+</html>

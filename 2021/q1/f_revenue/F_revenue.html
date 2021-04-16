@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha256-t9UJPrESBeG2ojKTIcFLPGF7nHi2vEc7f5A2KpH/UBU=" crossorigin="anonymous"></script>
-    <title>Revenue Models</title>
+    <title>F_revenue</title>
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
@@ -18,18 +18,30 @@
 
     <style>
 
-      body{
-       font-family: 'Roboto', sans-serif;
-        
-      }
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Roboto", sans-serif;
+    }
+    html {
+      height: -webkit-fill-available;
+    }
+    body {
+      margin: 0 auto;
+      min-height: 100vh;
+      min-height: -webkit-fill-available;
+      overflow-x: hidden;
+    }
        #maindiv{
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            align-items: center;
+        margin: 5% auto;
+      padding: 0 5%;
+      width: 950px;
           }
 
-        
+          .chart-container {
+      margin: 0 auto;
+    }
 
         #chartdiv{
           width:60%;
@@ -37,83 +49,84 @@
           justify-content: flex-start;
         }
 
-        #headerdiv{
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-            width:60%;
-            color:#000000;
-            font-weight: bold;
-        }
+        .top-charts {
+      margin: 5% auto;
+      display: flex;
+      
+      justify-content: space-between;
+    }
+    .title {
+      width: 60%;
+    }
+    .title h3 {
+      font-weight: bold;
+      font-size: 20px;
+    }
+    .chart-icon {
+      text-align: right;
+      justify-content: flex-end;
+    }
 
-        #p{
-            color: grey;
-            font-size: 13px;
-            text-align:left;
-        }
+    .methodology {
+      margin: 3% auto;
+    }
+    .methodology p {
+      font-size: 12px;
+      color: #7f7f7f;
+    }
 
-        h3{
-            font-size: 20px;
-        }
+       
 
-        h3 span{
-          font-weight: 400;
-          font-size:16px;
-        }
+    @media only screen and (max-width:1650px) {
+      h3 {
+        font-size: 18px;
+      }
+    }
 
-        #descdiv{
-          width:60%;
-        }
+    @media only screen and (max-width:1256px) {
+      .chart-container{
+        width:100%;
+      }
 
+      .top-charts{
+          width:100%;
+      }
 
-        #header-numbers{
-          font-weight: 100;
-        }
+      .methodology{
+          width:100%;
+      }
+    }
 
-        @media only screen and (max-width:1650px)
-            {h3{
-              font-size: 18px;
-            }}
+    @media only screen and (max-width:1055px) {
+      .top-charts {
+        display: flex;
+        flex-direction: column-reverse;
+      }
 
-        @media only screen and (max-width:1055px)
-        {
-          #headerdiv{
-          display: flex;
-          flex-direction: column-reverse;
+      h3 {
+        text-align: center;
+      }
 
-        }
-
-        h3{
-          text-align: center;
-        }
-        #chartdiv{
-            width:90%;
-          }
-        }
-
-        @media only screen and (max-width:600px)
-        {
-          #chartdiv{
-            width:90%;
-          }
-          #descdiv{
-          width:90%;
-        }
         }
 
 
     </style>
 
     <div id="maindiv">
-      <div id="headerdiv">
-          
-          <h3>Revenue Model <br><span>Q1 2020 (N=690)</span></h3>
-          
-          <img src="./platformable-logo-blue.png" width="210px">
+      <div class="top-charts">
+        <div class="title">
+          <h3>Revenue Model</h3>
+          <p>Q1 2021 (N = 690)</p>
+        </div>
+        <div class="chart-icon">
+          <a href="./../index.html" title="back to home" id="logo"> <img src="./../general_assets/img/logo.svg"
+              alt="platformable logo with blue letters and blue square" width="160px" /></a>
+        </div>
       </div>
-      <div id="chartdiv"><canvas id="myChart" height="550" ></canvas></div>
-      <div id="descdiv"><p id="p"><strong>Methodology:</strong> Platformable tracks all fintech globally that are accredited or known to use bank APIs. We then review what products they are making available and tally them according to category, and we measure other characteristics such as their target customer segments and business model/monetisation approaches. We review each fintech at least once every three months.</p></div>
+      <div class="chart-container">
+        <canvas id="myChart" height="550" ></canvas>
+      </div>
+      <div class="methodology"><p><strong>Methodology:</strong> Platformable tracks all fintech globally that are accredited or known to use bank APIs. We then review what products they are making available and tally them according to category, and we measure other characteristics such as their target customer segments and business model/monetisation approaches. We review each fintech at least once every three months.</p></div>
   </div>
    
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@1.1.2    // exact version"></script>
@@ -206,7 +219,7 @@
                 gridLines: {
                 color: "rgba(0, 0, 0, 0)",
             },
-                barThickness : 30,
+                barThickness : 24,
                 ticks: {
                   
                   fontSize:14,

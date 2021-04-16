@@ -1,152 +1,211 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <style>
-    
-    </style>
-</head>
-<body>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js" integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw==" crossorigin="anonymous"></script>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js" integrity="sha256-t9UJPrESBeG2ojKTIcFLPGF7nHi2vEc7f5A2KpH/UBU=" crossorigin="anonymous"></script>
+    <title>F_subCat</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    </head>
+  <body>
 
     <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Roboto", sans-serif;
+    }
+    html {
+      height: -webkit-fill-available;
+    }
+    body {
+      margin: 0 auto;
+      min-height: 100vh;
+      min-height: -webkit-fill-available;
+      overflow-x: hidden;
+    }
+       #maindiv{
+        margin: 5% auto;
+      padding: 0 5%;
+      width: 1000px;
+          }  
+          .chart-container {
+      margin: 0 auto;
+    }
+
+        #chartdiv{
+          width:60%;
+          display: flex;
+          justify-content: flex-start;
+        }
+
+        .top-charts {
+      margin: 5% auto;
+      display: flex;
       
+      justify-content: space-between;
+    }
+    .title {
+      width: 60%;
+    }
+    .title h3 {
+      font-weight: bold;
+      font-size: 20px;
+    }
+    .chart-icon {
+      text-align: right;
+      justify-content: flex-end;
+    }
+
+    .methodology {
+      margin: 3% auto;
+    }
+    .methodology p {
+      font-size: 12px;
+      color: #7f7f7f;
+    }
+    
+    @media only screen and (max-width: 768px) {
+      .chart-container{
+        width:100%;
+      }
+
+      .top-charts{
+          width:100%;
+      }
+
+      .methodology{
+          width:100%;
+      }
+
+    }
+
+        @media only screen and (max-width: 600px){
       .top-charts {
-     display:grid;
-     grid-template-columns:2fr 1fr;
-     justify-content:space-between;
-     align-items:center;
-     
-   }
-   
-   .top-charts .title {
-     font-weight:bold;
-        font-size:16px;
-   }
-   
-   .chart-icon {
-     text-align:right;
-     justify-content:flex-end;
-   }
-   .top-charts .title {
-     font-weight:bold;
-   }
-   
-   .chart-icon {
-     text-align:right;
-     justify-content:flex-end;
-   }
-   
-   .methodology {
-     font-style:italic;
-     font-size:12px;
-       margin:20px 0 8 0;
-   }
+      flex-direction: column;
+    }
+    .title {
+      width: 85%;
+    }
+    .title,.chart-icon  {
+      text-align: center;
+      padding: 2%;
+    }
+    }
+       
    </style>
-    <div class="top-charts">
-      <div class="title">Product Categories for Accredited Fintechs</div>
-      <div class="chart-icon"><img src="https://platformable.com/content/images/2021/01/platformable-icon-blue.png" alt="" style="max-width:32px;"></div>
-    </div>
-    <div class="chart-container" style="position: relative; height:60vh; width:100%">
-    <canvas id="productCatFintech"></canvas>
-   
-</div>
-<div class="methodology">
-    <p>METHODOLOGY: Platformable tracks all banks globally and tallies those that have established an open API platform. We then review how many API products are made available by each bank and tally them according to category, and measure other API characteristics such as standards and specifications used, developer experience strategies employed, and business model/monetisation approaches. We review each bank at least once every three months.</p>
+    <div id="maindiv">
+      <div class="top-charts">
+        <div class="title">
+          <h3>Top 10 Fintech sub-categories by growth in Q1 2021
+          </h3>
+          <p></p>
+        </div>
+        <div class="chart-icon">
+          <a href="./../index.html" title="back to home" id="logo"> <img src="./platformable-logo-blue.png"
+              alt="platformable logo with blue letters and blue square" width="160px" /></a>
+        </div>
+      </div>
+      <div class="chart-container">
+        <canvas id="myChart" height="550" ></canvas>
+      </div>
+      <div class="methodology"><p><strong>Methodology:</strong> Platformable tracks all fintech globally that are accredited or known to use bank APIs. We then review what products they are making available and tally them according to category, and we measure other characteristics such as their target customer segments and business model/monetisation approaches. We review each fintech at least once every three months.</p></div>
   </div>
+   
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@1.1.2    // exact version"></script>
 <script>
-var ctx = document.getElementById('productCatFintech');
-Chart.defaults.global.defaultFontColor = '#1b014c';
+var ctx = document.getElementById("myChart").getContext("2d");
+Chart.defaults.global.defaultFontColor = 'black';
 var myChart = new Chart(ctx, {
     type: 'horizontalBar',
+    
     data: {
         labels: [
-        'Payments',
-'Banking Operations',
-'Financial Management (Business or Personal)',
-'Lending',
-'Wealth Management',
-'Market Provision',
-'Regtech',
-'Other',
-'Business Operations',
-'Real Estate',
-'Blockchain/Crypto',
-'Insurance'
+        'Account/API Aggregation services',
+'Payment Back-end & Infrastructure',
+'Account-keeping & Budgeting',
+'Transaction & Processing',
+'Private Investment Management',
+'Digital Banking',
+'Data and analytics',
+'Card & Wallet Management',
+'Personal Insurance',
+'Institutional Investment Management',
+
         ],
         datasets: [{
-            label: 'Numbers of fintechs (EU)',
+            label: 'Q4 2020',
             data: [
-            92,
-            73,
-            94,
-            16,
-            25,
+            88,
+            55,
+            72,
+            30,
+            24,
+            26,
             27,
-            6,
-            10,
-            5,
-            4,
-            1,
-            1
+            18,
+            2,
+            5
             ],
             backgroundColor: [
-                '#ffd23f',
-                '#ffd23f',
-                '#ffd23f',
-                '#ffd23f',
-                '#ffd23f',
-                '#ffd23f',
-                '#ffd23f',
-                '#ffd23f',
-                '#ffd23f',
-                '#ffd23f',
-                '#ffd23f',
-                '#ffd23f',
+                '#dee2ed',
+                '#b3b3b3',
+                '#deeedd',
+                '#b3b3b3',
+                '#f0dbe6',
+                '#dee2ed',
+                '#deeedd',
+                '#b3b3b3',
+                '#deeedd',
+                '#f0dbe6',
+                
 
       
             ],
             borderWidth: 0,
-            barThickness: 6,
-        maxBarThickness: 8,
+            barThickness: 10,
+        
         minBarLength: 1
         },
     
         {
-            label: 'Numbers of fintechs (NOT-EU)',
+            label: 'Q4 2021',
             data: [
-            195,
-            49,
-            19,
-            35,
-            9,
-            3,
-            15,
-            4,
-            1,
-            2,
-            2,
-            2,
+            115,
+            85,
+            85,
+            42,
+            39,
+            38,
+            38,
+            31,
+            29,
+            16,
             ],
             backgroundColor: [
-            '#fb5012',
-            '#fb5012',
-            '#fb5012',
-            '#fb5012',
-            '#fb5012',
-            '#fb5012',
-            '#fb5012',
-            '#fb5012',
-            '#fb5012',
-            '#fb5012',
-            '#fb5012',
-            '#fb5012',
+            '#7c8ab6',
+            '#201c50',
+            '#97c995',
+            '#201c50',
+            '#c16a95',
+            '#7c8ab6',
+            '#97c995',
+            '#000000',
+            '#59a857',
+            '#c16a95',
+            
             ],
             borderWidth: 0,
-            barThickness: 6,
-        maxBarThickness: 8,
+            barThickness: 10,
+       
         minBarLength: 1
         }    
     ]
@@ -154,18 +213,60 @@ var myChart = new Chart(ctx, {
     options: {
         responsive:true,
         maintainAspectRatio:false,
+        showScale: false,
         title: {
             display: true,
-            text: '',
+            text: 'Number of Fintechs',
+            fontSize : 14,
             fontColor:'#1b014c',
-            position:'bottom'
+            position:'bottom',
+            align:'end',
+            textDirection:'rtl',
+        },
+        plugins: {
+            legend: {
+                display: true,
+                labels: {
+                    
+                }
+            }
         },
         scales: {
             yAxes: [{
+                display:true,
+                scaleLabel:{
+                  display:true,
+                  labelString:'Sub category',
+                  fontStyle: 'bold',
+                  fontSize: 14,
+                },
                 ticks: {
-                    beginAtZero: true
-                }
-            }]
+                    beginAtZero: true,
+                    fontSize: 10,
+              fontStyle: 'bold',
+                },
+                
+                
+            }],
+            xAxes: [{
+            categoryPercentage: 0.1,
+            barPercentage: 0.5,
+            barThickness: 84,
+            ticks: {
+              fontSize: 10,
+              fontStyle: 'bold',
+              fontColor:'#1b014c',
+            },
+            
+                
+            gridLines: {
+              
+                drawBorder: false,
+                display: false
+            
+
+            }
+          }]
         },
         animation: {
 			onComplete: function () {
