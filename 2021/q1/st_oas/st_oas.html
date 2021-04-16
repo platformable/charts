@@ -63,14 +63,9 @@
       justify-content: flex-end;
       text-align: right;
     }
-    .right-legend{
-      font-size: 12px;
-      font-weight: bold;
-      float: right;
-    }
     .methodology {
       margin: 5% auto;
-      padding-bottom: 2%;
+      padding: 0 2%;
     }
 
     .methodology p {
@@ -106,7 +101,6 @@
 
     <div class="chart-container" style="position: relative; height:50vh;width: 800;">
       <div id="st_oas" style="height: 100%; width: 800;"></div>
-      <p class="right-legend">Number of<br/> Platforms</p>
       <!--this library needs the 100% height-->
     </div>
     <div class="methodology">
@@ -127,20 +121,7 @@
           type: 'shadow'        // 'shadow' as default; can also be 'line' or 'shadow'
         },
       },
-
-    /*  title: {//
-        text: 'Legend:',
-        textVerticalAlign: 'middle',
-        textStyle: {
-          fontSize: 12,
-          color:'#000',
-        },
-        top: 7,
-        right: 250,
-        bottom: 2,
-        //left:5,
-      }, */
-      color: ['#20144e', '#ffd23f'],
+      color: [ '#20144e','#ffd23f'],
       textStyle: {
         fontFamily: 'Roboto',
         color: '#000',
@@ -153,35 +134,36 @@
         itemWidth:14,//squared boxes
         //itemHeight:14, which makes the perfect squares
         align:'right',//boxes alignment
-        data: ['Number of platforms without OAS', 'Number of platforms with OAS'],
+        data: ['Number of platforms with OAS','Number of platforms without OAS' ],
         textStyle: {
           //fontWeight:'bold',
         },
       },
       grid: {
-        top:70,
+       //top:70,
         left: '3%',
         right: '3%',
-        bottom: '3%',
+        bottom: '8%',
         containLabel: true
       },
       xAxis: {//
         type: 'value',
-        //name: 'Number\nof Platforms',//
+        name: 'Number\nof Platforms',//
         //nameLocation:'end', default end pb with width
         nameTextStyle: {
           fontWeight: 'bold',
           //lineHeight: 12,
-          align: 'right',
-          verticalAlign: 'top',
-          padding:5,
+          //align: 'right',
+          //verticalAlign: 'top',
+          padding:15,
         },
-        nameLocation: 'start',//MOVES X AXIS LEGEND TO THE LEFT
+        nameLocation: 'middle',//MOVES X AXIS LEGEND TO THE LEFT
         nameGap: 5, //MOVES X AXIS LEGEND cloaser or further in horizontal
         min:0,
-        max:500,
+        max:100,
         axisLabel:{
-          //  margin:15,//MOVES YAXIS UP
+          formatter: '{value} %',
+          //margin:15,//MOVES YAXIS UP
             //inside:true,
         },
 
@@ -189,8 +171,10 @@
       yAxis: {
         type: 'category',
         name: 'Region',
+        nameLocation: 'middle',
         nameTextStyle: {
           fontWeight: 'bold',
+          padding: 115,
         },
         axisLine: {
           show: false,
@@ -201,14 +185,31 @@
         //nameRotate:90 - CHARTS.js DOESN'T HAVE THIS
         data: ['US & Canada', 'UK', 'Middle East & Africa', 'Latin America', 'Europe & Scandinavia', 'Eastern Europe', 'Asia Pacific']//1st country in mockup is the last country in our chart
       },
-      series: [{
-        name: 'Number of platforms without OAS',
-        data: [10,4,16,10,44,0,29],
+      series: [
+      {
+        name: 'Number of platforms with OAS',
+        data: [38,84,72,64,91,100,66],
         type: 'bar',
         barWidth: 20,
         stack: 'total',
         label: {
-          show: true
+          show: true,
+          formatter: '{c}%',
+        },
+        emphasis: {
+          focus: 'series'
+        },
+        barMinHeight: 35,//helps when data is too small such as 3
+      },
+      {
+        name: 'Number of platforms without OAS',
+        data: [63,16,28,36,9,'',34],//putting a zero would make appear a small yellow square
+        type: 'bar',
+        barWidth: 20,
+        stack: 'total',
+        label: {
+          show: true,
+          formatter: '{c}%',
         },
         emphasis: {
           focus: 'series'
@@ -216,20 +217,7 @@
         barMinHeight: 35,//helps when data is too small such as 3
 
       },
-      {
-        name: 'Number of platforms with OAS',
-        data: [6,21,41,18,462,2,57],
-        type: 'bar',
-        barWidth: 20,
-        stack: 'total',
-        label: {
-          show: true
-        },
-        emphasis: {
-          focus: 'series'
-        },
-        barMinHeight: 35,//helps when data is too small such as 3
-      },
+      
 
       ]
     };

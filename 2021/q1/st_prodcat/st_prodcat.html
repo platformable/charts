@@ -37,7 +37,8 @@
     #chart {
       margin: 5% auto;
       padding: 0 5%;
-      width: 942px; /*THIS GIVES THE CHART EXACTLY 800PX*/
+      width: 942px;
+      /*THIS GIVES THE CHART EXACTLY 800PX*/
     }
 
     .chart-container {
@@ -63,25 +64,10 @@
       justify-content: flex-end;
       text-align: right;
     }
-    /* 
-    .y-left-legend, .x-right-legend {
-      font-size: 12px;
-      font-weight: bold;
-      margin: 0 auto;
-    }
-
-    .y-left-legend{      
-    text-align: left;
-    transform: rotate(45deg);     
-    }
-
-    .x-right-legend{
-      text-align: center;      
-    } */
 
     .methodology {
       margin: 5% auto;
-      padding-bottom: 2%;
+      padding: 0 2%;
     }
 
     .methodology p {
@@ -109,19 +95,21 @@
         <h3>Bank API products by category and region</h3>
         <p>Q1 2021 (N= 4,093)</p>
       </div>
-      <div class="chart-icon">   <a href="./../index.html" title="back to home" id="logo"> <img src="./../general_assets/img/logo.svg"
-        alt="platformable logo with blue letters and blue square" width="160px"/></a>
+      <div class="chart-icon"> <a href="./../index.html" title="back to home" id="logo"> <img
+            src="./../general_assets/img/logo.svg" alt="platformable logo with blue letters and blue square"
+            width="160px" /></a>
       </div>
     </div>
 
     <div class="chart-container" style="position: relative; height:50vh;width: 800;">
-      <div id="st_prodcat" style="height: 100%;; width: 800;"></div>
-     <!--  <p class="y-left-legend">Region</p>
-      <p class="x-right-legend">Proportion of Product Category (%)</p> -->
-      <!--this library needs the 100% height-->
+      <div id="st_prodcat" style="height: 100%; width: 800;"></div>
     </div>
     <div class="methodology">
-      <p><strong>Methodology</strong>: Platformable tracks all banks globally and tallies those that have established an open API platform. We then review how many API products are made available by each bank and tally them according to category, and measure other API characteristics such as standards and specifications used, developer experience strategies employed, and business model/monetisation approaches. We review each bank at least once every three months.</p>
+      <p><strong>Methodology</strong>: Platformable tracks all banks globally and tallies those that have established an
+        open API platform. We then review how many API products are made available by each bank and tally them according
+        to category, and measure other API characteristics such as standards and specifications used, developer
+        experience strategies employed, and business model/monetisation approaches. We review each bank at least once
+        every three months.</p>
     </div>
   </div>
   <script type="text/javascript">
@@ -131,27 +119,27 @@
 
     var option;
 
-    function getSeries (name, data) {
+    function getSeries(name, data) {
       return {
-          name: name,
-          type: 'bar',
-          barWidth: 25,
-          barMinHeight: 10,
-          stack: 'total',
-          label: {
-            show: true,
-            color: '#fff',
-            fontSize: 10,
-            //formatter: '{c}%',
-          },
-          emphasis: {
-            focus: 'series'
-          },
-          data:data,
-        };
+        name: name,
+        type: 'bar',
+        barWidth: 25,
+        barMinHeight: 10,
+        stack: 'total',
+        label: {
+          show: true,
+          color: '#fff',
+          fontSize: 10,
+          //formatter: '{c}%',
+        },
+        emphasis: {
+          focus: 'series'
+        },
+        data: data,
+      };
     }
     option = {
-        tooltip: {
+      tooltip: {
         trigger: 'axis',
         axisPointer: {            // Use axis to trigger tooltip
           type: 'shadow',
@@ -169,7 +157,7 @@
         left: 'right',
         //itemHeight:30,
         itemWidth: 14,
-        align:'right',//boxes alignment
+        align: 'right',//boxes alignment
         //itemGap: 10,
         //orient:'vertical',
         padding: 10 / 5,
@@ -179,36 +167,38 @@
         },
       },
       grid: {
-        top:70,
+        //top:70,
         left: '3%',
         right: '3%',
-        bottom: '3%',
+        bottom: '8%',
         containLabel: true
       },
       xAxis: {
         type: 'value',
         axisLabel: {
           formatter: '{value} %',
-         // margin: 14,
+          // margin: 14,
         },
-        name: 'Proportion of\nProduct Category (%)',
+        name: 'Proportion of\nproduct category (%)',
         nameTextStyle: {
           fontWeight: 'bold',
           //lineHeight: 12,
-          align: 'right',
-          verticalAlign: 'top',
-          padding:5,
+          // align: 'right',
+          //verticalAlign: 'top',
+          padding: 15,
         },
-        nameLocation: 'start',//MOVES X AXIS LEGEND TO THE LEFT
+        nameLocation: 'middle',//MOVES X AXIS LEGEND TO THE LEFT
         nameGap: 5, //MOVES X AXIS LEGEND cloaser or further in horizontal
-        min:0,
-        max:100, 
+        min: 0,
+        max: 100,
       },
       yAxis: {
         type: 'category',
         name: 'Region',
+        nameLocation: 'middle',
         nameTextStyle: {
           fontWeight: 'bold',
+          padding: 115,
         },
         axisLine: {
           show: false
@@ -219,13 +209,13 @@
         data: ['US & Canada', 'UK', 'Middle East & Africa', 'Latin America', 'Europe & Scandinavia', 'Eastern Europe & Russia', 'Asia Pacific']//1st country on mockup is last country in chart
       },
       series: [
-        getSeries('Mandated APIs', [52,79,60,56,82,13,50]),
-        getSeries('Identity', [7,10,9,15,10,27,10]),
-        getSeries('Credit Services', [4,2,9,8,2,33,21]),
-        getSeries('Data Services', [13,2,6,13,3,0,4]),
-        getSeries('Trading', [13,0,5,1,1,0,5]),
-        getSeries('Loyalty/rewards', [2,0,2,1,0,7,2]),
-        getSeries('Other', [9,8,9,7,2,20,9]),
+        getSeries('Mandated APIs', [52, 79, 60, 56, 82, 13, 50]),
+        getSeries('Identity', [7, 10, 9, 15, 10, 27, 10]),
+        getSeries('Credit Services', [4, 2, 9, 8, 2, 33, 21]),
+        getSeries('Data Services', [13, 2, 6, 13, 3, 0, 4]),
+        getSeries('Trading', [13, 0, 5, 1, 1, 0, 5]),
+        getSeries('Loyalty/rewards', [2, 0, 2, 1, 0, 7, 2]),
+        getSeries('Other', [9, 8, 9, 7, 2, 20, 9]),
       ]
     };
 
