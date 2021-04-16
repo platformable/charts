@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C_tableIND</title>
+  <link rel="icon" type="image/png" href="./../general_assets/img/favicon.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <!--STYLESHEET-->
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Roboto", sans-serif;
+    }
+
+    html {
+      height: -webkit-fill-available;
+    }
+
+    body {
+      margin: 0 auto;
+      min-height: 100vh;
+      min-height: -webkit-fill-available;
+      overflow-x: hidden;
+    }
+
+    #chart-grid {
+      margin: 0 auto;
+      width: 800px;
+      padding: 0 2%;
+    }
+
+    .top-charts {
+      margin: 5% auto;
+      display: flex;
+      justify-content: space-between;
+    }
+
+    .title {
+      width: 45%;
+    }
+
+    .title h3 {
+      font-weight: bold;
+      font-size: 20px;
+    }
+
+    .chart-icon {
+      justify-content: flex-end;
+      text-align: right;
+    }
+
+    .c_table_category {
+      padding: 5%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .grid-item {
+      width: 45%;
+      padding: 1% 0;
+      height: 35vh;
+    }
+
+    .grid-item_category {
+      margin-bottom: 2%;
+    }
+
+    .borderlined {
+      border-top: 1px solid #808080;
+    }
+
+    h4,
+    h5 {
+      font-size: 16px;
+      padding: 2% 0;
+      font-weight: bold;
+    }
+
+    .grid-item h4 {
+      color: #808080;
+    }
+
+    .bank-partner {
+      margin-bottom: 3%;
+    }
+
+    .bank-partner p {
+      font-size: 0.625rem;
+    }
+
+    span {
+      font-size: 10px;
+      color: #808080;
+    }
+
+    p {
+      font-size: 14px;
+    }
+
+    .grid-item_container {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .grid-img {
+      display: flex;
+      padding-bottom: 2%;
+    }
+
+    img {
+      display: block;
+      height: auto;
+    }
+
+    .grid-content {
+      width: 65%;
+    }
+
+
+    .button-item {
+      text-align: right;
+      margin: 5% 0;
+    }
+
+    a[role=button] {
+      background-color: #fb5012;
+      color: #fff;
+      padding: 4%;
+      border-radius: 18px;
+      cursor: pointer;
+      font-size: 10px;
+      text-decoration: none;
+    }
+
+    a[role=button]:hover {
+      background-color: #1B014C;
+    }
+
+
+    .methodology {
+      margin: 3% auto;
+      padding-bottom: 2%;
+    }
+
+    .methodology p {
+      font-size: 12px;
+      color: #7f7f7f;
+    }
+
+    @media only screen and (max-width: 600px) {
+      .top-charts {
+        flex-direction: column-reverse;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .title {
+        text-align: center;
+        width: 85%;
+      }
+
+      .grid-item_container {
+        flex-direction: column;
+      }
+    }
+
+    @media only screen and (max-width: 768px) {
+      .c_table_category {
+        flex-direction: column;
+      }
+
+      .borderlined {
+        border: none;
+      }
+
+      .grid-item {
+        width: 95%;
+        height: 55vh;
+      }
+
+      .button-item {
+        text-align: left;
+      }
+
+    }
+  </style>
+
+  <!--HTML-->
+  <div id="chart-grid">
+
+    <div class="top-charts">
+      <div class="title">
+        <h3>New products aimed at Individuals/Household end users</h3>
+        <p>Q1 2021 (N=143)</p>
+      </div>
+      <div class="chart-icon"> <a href="./../index.html" title="back to home" id="logo"> <img
+            src="./../general_assets/img/logo.svg" alt="platformable logo with blue letters and blue square"
+            width="160px" /></a>
+      </div>
+    </div>
+
+    <div id="chart-c_tableIND">
+
+      <div class="c_table_category">
+        
+        <div class="grid-item">
+          <h3>Payments</h3>
+          <h4>P2P Payments</h4>
+          <div class="grid-item_container">
+            <div class="grid-img">
+              <a href="https://www.mobilepay.dk/" target="_blank" rel="noopener noreferrer"><img src="assets/mobile_pay.svg" alt="" width="80" /></a>
+            </div>
+
+            <div class="grid-content">
+              <h5>Mobile pay</h5>
+              <div class="bank-partner">
+                <p><span>Bank/Fintech APIs used:</span> DankseBank</p>
+                <!--  <p><span>Platform APIs available:</span> 5</p> -->
+              </div>
+              <div class="offers">
+                <p>Platform that enables mobile payments between individuals as well as small businesses in Denmark and
+                  Finland</p>
+              </div>
+              <div class="button-item">
+                <a href="#" role="button" title="Transactional revenue">Transactional revenue</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-item">
+          <h4>Card & Wallet Management</h4>
+          <div class="grid-item_container">
+            <div class="grid-img">
+              <a href="https://www.i-saku.com/" target="_blank" rel="noopener noreferrer"><img src="assets/i_saku.svg" alt="" width="80" /></a>
+            </div>
+
+            <div class="grid-content">
+              <h5>I.saku</h5>
+              <div class="bank-partner">
+                <p><span>Bank/Fintech APIs used:</span> Bank Rakyat Indonesia</p>
+                <p><span>Platform APIs available:</span> 5</p>
+              </div>
+              <div class="offers">
+                <p>Mobile wallet that enables bill payments, online payments, p2p payments as well as issuing new cards
+                </p>
+              </div>
+              <div class="button-item">
+                <a href="#" role="button" title="Subscription Revenue">Subscription Revenue</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-item borderlined">
+          <h4>FX</h4>
+          <div class="grid-item_container">
+            <div class="grid-img">
+              <a href="https://www.azafinance.com/transferzero/" target="_blank" rel="noopener noreferrer"><img src="assets/transfer_zero.svg" alt="" width="80" /></a>
+            </div>
+
+            <div class="grid-content">
+              <h5>Transferzero</h5>
+              <div class="bank-partner">
+                <!-- <p><span>Bank/Fintech APIs used:</span> Bank Rakyat Indonesia</p> -->
+                <p><span>Platform APIs available:</span> 1</p>
+              </div>
+              <div class="offers">
+                <p>Platform that enables payments & transfers between Africa and Europe while also providing online
+                  lending and banking services</p>
+              </div>
+              <div class="button-item">
+                <a href="#" role="button" title="Subscription Revenue">Commission based</a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="grid-item borderlined">
+          <h4>Merchant Payments</h4>
+          <div class="grid-item_container">
+            <div class="grid-img">
+              <a href="https://dlocal.com/" target="_blank" rel="noopener noreferrer"><img src="assets/d_local.svg" alt="" width="80" /></a>
+            </div>
+
+            <div class="grid-content">
+              <h5>Dlocal</h5>
+              <div class="bank-partner">
+                <!-- <p><span>Bank/Fintech APIs used:</span> Bank Rakyat Indonesia</p> -->
+                <p><span>Platform APIs available:</span> 1</p>
+              </div>
+              <div class="offers">
+                <p>Allows online payments to merchants including online retailers, SaaS companies, online marketplaces
+                  across Latin America, Asia Pacific, Middle East and Africa</p>
+              </div>
+              <div class="button-item">
+                <a href="#" role="button" title="Subscription Revenue">Commission based</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="c_table_category">
+
+      <div class="grid-item borderlined">
+        <h3>Banking Operations</h3>
+        <h4>Digital Banking</h4>
+        <div class="grid-item_container">
+          <div class="grid-img">
+            <a href="https://www.wise.us/" target="_blank" rel="noopener noreferrer"><img src="assets/wise.svg" alt="" width="80" /></a>
+          </div>
+
+          <div class="grid-content">
+            <h5>Wise</h5>
+            <div class="bank-partner">
+              <p><span>Bank/Fintech APIs used:</span> BBVA USA</p>
+              <!--  <p><span>Platform APIs available:</span> 5</p> -->
+            </div>
+            <div class="offers">
+              <p>Allows opening of online accounts acting as a digital bank which further offers banking services like
+                card issuance and money transfers</p>
+            </div>
+            <div class="button-item">
+              <a href="#" role="button" title="Subscription Revenue">Subscription Revenue</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-item borderlined">
+        <h3>Financial Management (Business or Personal)</h3>
+        <h4>Account keeping and budgeting</h4>
+        <div class="grid-item_container">
+          <div class="grid-img">
+            <a href="https://youngmoney.sparnord.dk/" target="_blank" rel="noopener noreferrer"><img src="assets/young_money.svg" alt="" width="80" /></a>
+          </div>
+
+          <div class="grid-content">
+            <h5>Young Money</h5>
+            <div class="bank-partner">
+              <p><span>Bank/Fintech APIs used:</span> Spar Nordbank</p>
+              <!--  <p><span>Platform APIs available:</span> 5</p> -->
+            </div>
+            <div class="offers">
+              <p>Application aimed at young individuals that allows tracking of expenses and helps in budgeting while
+                also giving insights to save and grow their money</p>
+            </div>
+            <div class="button-item">
+              <a href="#" role="button" title="Subscription Revenue">Subscription Revenue</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+
+      <div class="c_table_category">
+
+      <div class="grid-item borderlined">
+        <h3>Lending</h3>
+        <h4>Consumer credit Services</h4>
+        <div class="grid-item_container">
+          <div class="grid-img">
+            <a href="https://www.krungsri.com/bank/th/krungsri-consumer/home.html" target="_blank" rel="noopener noreferrer"><img src="assets/krungsri.svg" alt="" width="80" /></a>
+          </div>
+
+          <div class="grid-content">
+            <h5>Krungsri Consumer</h5>
+            <div class="bank-partner">
+              <p><span>Bank/Fintech APIs used:</span> Mitsubishi UFJ Financial Group</p>
+              <p><span>Platform APIs available:</span> 3</p>
+            </div>
+            <div class="offers">
+              <p>Subsidiary of Krungsri Consumer, that offers diverse lending services for individuals as well as small
+                businesses including consumer loans, credit cards and factoring</p>
+            </div>
+            <div class="button-item">
+              <a href="#" role="button" title="Interest">Interest</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="grid-item borderlined">
+        <h4>Alternative lending</h4>
+        <div class="grid-item_container">
+          <div class="grid-img">
+            <a href="https://www.kiva.org/" target="_blank" rel="noopener noreferrer"><img src="assets/kiva.svg" alt="" width="80" /></a>
+          </div>
+
+          <div class="grid-content">
+            <h5>Kiva</h5>
+            <div class="bank-partner">
+              <p><span>Bank/Fintech APIs used:</span> Paypal</p>
+              <p><span>Platform APIs available:</span> 1</p>
+            </div>
+            <div class="offers">
+              <p>Online alternative lending platform for primarily students, freelancers and self-employed.</p>
+            </div>
+            <div class="button-item">
+              <a href="#" role="button" title="Interest">Interest</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+
+      <div class="c_table_category">
+
+      <div class="grid-item borderlined">
+        <h3>Blockchain/Crypto</h3>
+        <h4>Crypto Exchange trading</h4>
+        <div class="grid-item_container">
+          <div class="grid-img">
+            <a href="https://bitbay.net/en" target="_blank" rel="noopener noreferrer"><img src="assets/bitbay.svg" alt="" width="80" /></a>
+          </div>
+
+          <div class="grid-content">
+            <h5>Bitbay</h5>
+            <div class="bank-partner">
+              <p><span>Bank/Fintech APIs used:</span> Mitsubishi UFJ Financial Group</p>
+              <p><span>Platform APIs available:</span> 2</p>
+            </div>
+            <div class="offers">
+              <p>Europe based cryptocurrency exchange for retail traders and investors offering over 30 digital
+                currencies</p>
+            </div>
+            <div class="button-item">
+              <a href="#" role="button" title="Commission based">Commission based</a>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+      <div class="methodology">
+        <p><strong>Methodology</strong>: Platformable tracks all fintech globally that are accredited or known to use
+          bank APIs. We then review what products they are making available and tally them according to category, and we
+          measure other characteristics such as their target customer segments and business model/monetisation
+          approaches. We review each fintech at least once every three months.</p>
+      </div>
+    </div>
+
+</body>
+
+</html>
+<!--
+IMPORTANT
+Grid Title & product title: 15px bold 
+Grid Title: #808080
+
+Bank partner: 10px #808080
+Paragraph's 15px 
+line-height: 10px;
