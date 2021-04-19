@@ -15,7 +15,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
     </head>
   <body>
-
     <style>
     * {
       margin: 0;
@@ -40,17 +39,14 @@
           .chart-container {
       margin: 0 auto;
     }
-
         #chartdiv{
           width:60%;
           display: flex;
           justify-content: flex-start;
         }
-
         .top-charts {
       margin: 5% auto;
       display: flex;
-      
       justify-content: space-between;
     }
     .title {
@@ -64,7 +60,6 @@
       text-align: right;
       justify-content: flex-end;
     }
-
     .methodology {
       margin: 3% auto;
     }
@@ -72,22 +67,17 @@
       font-size: 12px;
       color: #7f7f7f;
     }
-    
     @media only screen and (max-width: 768px) {
       .chart-container{
         width:100%;
       }
-
       .top-charts{
           width:100%;
       }
-
       .methodology{
           width:100%;
       }
-
     }
-
         @media only screen and (max-width: 600px){
       .top-charts {
       flex-direction: column;
@@ -100,7 +90,6 @@
       padding: 2%;
     }
     }
-       
    </style>
     <div id="maindiv">
       <div class="top-charts">
@@ -119,14 +108,12 @@
       </div>
       <div class="methodology"><p><strong>Methodology:</strong> Platformable tracks all fintech globally that are accredited or known to use bank APIs. We then review what products they are making available and tally them according to category, and we measure other characteristics such as their target customer segments and business model/monetisation approaches. We review each fintech at least once every three months.</p></div>
   </div>
-   
     <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@1.1.2    // exact version"></script>
 <script>
 var ctx = document.getElementById("myChart").getContext("2d");
 Chart.defaults.global.defaultFontColor = 'black';
 var myChart = new Chart(ctx, {
     type: 'horizontalBar',
-    
     data: {
         labels: [
         'Account/API Aggregation services',
@@ -139,7 +126,6 @@ var myChart = new Chart(ctx, {
 'Card & Wallet Management',
 'Personal Insurance',
 'Institutional Investment Management',
-
         ],
         datasets: [{
             label: 'Q4 2020',
@@ -166,16 +152,11 @@ var myChart = new Chart(ctx, {
                 '#b3b3b3',
                 '#deeedd',
                 '#f0dbe6',
-                
-
-      
             ],
             borderWidth: 0,
             barThickness: 10,
-        
         minBarLength: 1
         },
-    
         {
             label: 'Q4 2021',
             data: [
@@ -201,11 +182,9 @@ var myChart = new Chart(ctx, {
             '#000000',
             '#59a857',
             '#c16a95',
-            
             ],
             borderWidth: 0,
             barThickness: 10,
-       
         minBarLength: 1
         }    
     ]
@@ -218,7 +197,6 @@ var myChart = new Chart(ctx, {
             display: true,
             text: 'Number of Fintechs',
             fontSize : 14,
-            fontColor:'#1b014c',
             position:'bottom',
             align:'end',
             textDirection:'rtl',
@@ -227,7 +205,6 @@ var myChart = new Chart(ctx, {
             legend: {
                 display: true,
                 labels: {
-                    
                 }
             }
         },
@@ -245,8 +222,6 @@ var myChart = new Chart(ctx, {
                     fontSize: 10,
               fontStyle: 'bold',
                 },
-                
-                
             }],
             xAxes: [{
             categoryPercentage: 0.1,
@@ -257,14 +232,9 @@ var myChart = new Chart(ctx, {
               fontStyle: 'bold',
               fontColor:'#1b014c',
             },
-            
-                
             gridLines: {
-              
                 drawBorder: false,
                 display: false
-            
-
             }
           }]
         },
@@ -278,7 +248,6 @@ var myChart = new Chart(ctx, {
 				this.data.datasets.forEach(function (dataset, i)
 				{
                     var meta = chartInstance.controller.getDatasetMeta(i);
-            
 					meta.data.forEach(function (bar, index) {
                         var data = dataset.data[index];
                         data > 0 ? ctx.fillText(data, bar._model.x +10, bar._model.y - 0) : ''
@@ -286,9 +255,18 @@ var myChart = new Chart(ctx, {
 				});
 			}
 		},
+    legend: {
+            display: true,
+            position: 'top',
+            fullWidth: false,
+            fontSize: 13,
+            labels: {
+              boxWidth: 12,//coloured boxes 
+              fontColor: '#1b014c',
+            },
+          },
     }
 });
 </script>
-    
 </body>
 </html>

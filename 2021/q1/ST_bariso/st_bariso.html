@@ -126,10 +126,10 @@
       type: 'bar',
       data: {
         labels: [
-          ["ISO 4217", "(currency)"],
-          ["ISO 8601", "(date YYYYMMDD)"],
-          ["ISO 3166", "(country)"],
-          ["ISO 20022", "(payments-frequency described)"],
+          ["ISO 4217 (currency)"],
+          ["ISO 8601 (date YYYYMMDD)"],
+          ["ISO 3166 (country)"],
+          ["ISO 20022 (payments-frequency)"],
         ],
         datasets: [{
           label: "N° of Platforms",
@@ -141,7 +141,7 @@
             "#FFD23F"
           ],
           borderWidth: 0,
-          barThickness: 84,
+          barThickness: 80,
         },
         ],
       },
@@ -178,11 +178,22 @@
           yAxes: [{
             /*  barThickness:68, */
             ticks: {
-              display: false,
+              display: true,
+              beginAtZero: true,
+              
+              
               /*   fontSize:"12",
                 beginAtZero: true,
                 suggestedMin:60 */
-            }
+            },
+            
+            scaleLabel:{
+                  display:true,
+                  labelString:'Number of platforms using standard',
+                  fontStyle: 'bold',
+                  fontColor:'black'
+                  
+                },
 
           }],
           xAxes: [{
@@ -195,7 +206,14 @@
             },
             gridLines: {
               display: false
-            }
+            },
+            scaleLabel:{
+                  display:true,
+                  labelString:'Common Standard',
+                  fontStyle: 'bold',
+                  fontColor:'black'
+                  
+                },
           }]
         }
       }
