@@ -5,14 +5,10 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>C_tableSME</title>
-  <link rel="icon" type="image/png" href="./../general_assets/img/favicon.png">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <title>C_tableSME carousel</title>
 </head>
 
 <body>
-  <!--STYLESHEET-->
   <style>
     * {
       margin: 0;
@@ -32,16 +28,118 @@
       overflow-x: hidden;
     }
 
-    #chart-grid {
-      margin: 0 auto;
-      width: 800px;
-      padding: 0 2%;
+    .carousel {
+      position: relative;
+      box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.64);
+      margin-top: 26px;
     }
 
-    .top-charts {
+    .carousel-inner {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+    }
+
+    .carousel-open:checked+.carousel-item {
+      position: static;
+      opacity: 100;
+    }
+
+    .carousel-item {
+      position: absolute;
+      opacity: 0;
+      -webkit-transition: opacity 0.6s ease-out;
+      transition: opacity 0.6s ease-out;
+      padding: 5%;
+      display: grid;
+      grid-gap: 1em;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: minmax(100px, 1fr);
+    }
+
+    .carousel-control {
+      background: rgba(0, 0, 0, 0.28);
+      border-radius: 50%;
+      color: #fff;
+      cursor: pointer;
+      display: none;
+      font-size: 40px;
+      height: 40px;
+      line-height: 35px;
+      position: absolute;
+      top: 50%;
+      -webkit-transform: translate(0, -50%);
+      cursor: pointer;
+      -ms-transform: translate(0, -50%);
+      transform: translate(0, -50%);
+      text-align: center;
+      width: 40px;
+      z-index: 10;
+    }
+
+    .carousel-control.prev {
+      left: 2%;
+    }
+
+    .carousel-control.next {
+      right: 2%;
+    }
+
+    .carousel-control:hover {
+      background: rgba(0, 0, 0, 0.8);
+      color: #aaaaaa;
+    }
+
+    #carousel-1:checked~.control-1,
+    #carousel-2:checked~.control-2,
+    #carousel-3:checked~.control-3,
+    #carousel-4:checked~.control-4,
+    #carousel-5:checked~.control-5 {
+      display: block;
+    }
+
+    .carousel-indicators {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      position: absolute;
+      bottom: 2%;
+      left: 0;
+      right: 0;
+      text-align: center;
+      z-index: 10;
+    }
+
+    .carousel-indicators li {
+      display: inline-block;
+      margin: 0 5px;
+    }
+
+    .carousel-bullet {
+      color: gray;
+      cursor: pointer;
+      display: block;
+      font-size: 35px;
+    }
+
+    .carousel-bullet:hover {
+      color: #aaaaaa;
+    }
+
+    #carousel-1:checked~.control-1~.carousel-indicators li:nth-child(1) .carousel-bullet,
+    #carousel-2:checked~.control-2~.carousel-indicators li:nth-child(2) .carousel-bullet,
+    #carousel-3:checked~.control-3~.carousel-indicators li:nth-child(3) .carousel-bullet,
+    #carousel-4:checked~.control-4~.carousel-indicators li:nth-child(4) .carousel-bullet,
+    #carousel-5:checked~.control-5~.carousel-indicators li:nth-child(5) .carousel-bullet {
+      color: #428bca;
+    }
+
+   /*CHART*/
+   .top-charts {
       margin: 5% auto;
       display: flex;
       justify-content: space-between;
+      padding: 3%;
     }
 
     .title {
@@ -52,20 +150,10 @@
       font-weight: bold;
       font-size: 20px;
     }
-
     .chart-icon {
       justify-content: flex-end;
       text-align: right;
     }
-
-    .c_table_category {
-      padding: 5%;
-      display: grid;
-      grid-gap: 1em; 
-      grid-template-columns:repeat(2, 1fr);
-      grid-template-rows: minmax(100px, 1fr);
-    }
-
     .grid-item_category {
       margin-bottom: 2%;
     }
@@ -142,10 +230,9 @@
       background-color: #1B014C;
     }
 
-
     .methodology {
       margin: 3% auto;
-      padding-bottom: 2%;
+      padding: 2%;
     }
 
     .methodology p {
@@ -164,46 +251,33 @@
         text-align: center;
         width: 85%;
       }
-
-      .grid-item_container {
-        flex-direction: column;
-      }
     }
 
     @media only screen and (max-width: 768px) {
-      .c_table_category {
+      .carousel-item {
         display: block;
       }
-
-      .borderlined {
-        border: none;
-      }
-
-      .button-item {
-        text-align: left;
-      }
-
     }
   </style>
 
-  <!--HTML-->
-  <div id="chart-grid">
 
+  <!--HTML-->
+  <div class="carousel">
     <div class="top-charts">
       <div class="title">
-        <h3>CONSUMERS-Q1 New Products aimed at SMEs</h3>
-        <p>(N=126)</p>
+        <h3>New products aimed at Individuals/Household end users</h3>
+        <p>Q1 2021 (N=143)</p>
       </div>
-      <div class="chart-icon"> <a href="./../index.html" title="back to home" id="logo"> <img
-            src="./../general_assets/img/logo.svg" alt="platformable logo with blue letters and blue square"
+      <div class="chart-icon"> <a href="../../index.html" title="back to home" id="logo"> <img
+            src="../../general_assets/img/logo.svg" alt="platformable logo with blue letters and blue square"
             width="160px" /></a>
       </div>
     </div>
-
-    <div id="chart-c_tableIND">
-
-      <div class="c_table_category">
-
+    <div class="carousel-inner">
+      <!--ONE 🎠-->
+      <input class="carousel-open" type="radio" id="carousel-1" name="carousel" aria-hidden="true" hidden=""
+        checked="checked">
+      <div class="carousel-item">
         <div class="grid-item">
           <h3>Financial Management (Business or Personal)</h3>
           <h4>Cashflow and balance transfer management</h4>
@@ -257,9 +331,10 @@
         </div>
       </div>
 
-      <div class="c_table_category">
-
-        <div class="grid-item borderlined">
+      <!--TWO 🎠-->
+      <input class="carousel-open" type="radio" id="carousel-2" name="carousel" aria-hidden="true" hidden="">
+      <div class="carousel-item">
+        <div class="grid-item">
           <h3>Banking Operations</h3>
           <h4>Account/API Aggregation services</h4>
           <div class="grid-item_container">
@@ -284,7 +359,7 @@
           </div>
         </div>
 
-        <div class="grid-item borderlined">
+        <div class="grid-item">
           <h3 style="visibility: hidden;">Banking Operations</h3>
           <h4>Account/API Aggregation services</h4>
           <div class="grid-item_container">
@@ -310,8 +385,12 @@
             </div>
           </div>
         </div>
+      </div>
 
-        <div class="grid-item borderlined">
+      <!--THREE 🎠-->
+      <input class="carousel-open" type="radio" id="carousel-3" name="carousel" aria-hidden="true" hidden="">
+      <div class="carousel-item">
+        <div class="grid-item">
           <h4>Account/API Aggregation services</h4>
           <div class="grid-item_container">
             <div class="grid-img">
@@ -335,7 +414,7 @@
           </div>
         </div>
 
-        <div class="grid-item borderlined">
+        <div class="grid-item">
           <h4>Account/API Aggregation services</h4>
           <div class="grid-item_container">
             <div class="grid-img">
@@ -358,8 +437,12 @@
             </div>
           </div>
         </div>
+      </div>
 
-        <div class="grid-item borderlined">
+      <!--FOUR 🎠-->
+      <input class="carousel-open" type="radio" id="carousel-4" name="carousel" aria-hidden="true" hidden="">
+      <div class="carousel-item">
+        <div class="grid-item">
           <h4>Account/API Aggregation services</h4>
           <div class="grid-item_container">
             <div class="grid-img">
@@ -382,11 +465,8 @@
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="c_table_category">
-
-        <div class="grid-item borderlined">
+        <div class="grid-item ">
           <h3>Regtech</h3>
           <h4>Digital Identity</h4>
           <div class="grid-item_container">
@@ -410,9 +490,12 @@
             </div>
           </div>
         </div>
+      </div>
 
-
-        <div class="grid-item borderlined">
+      <!--FIVE 🎠-->
+      <input class="carousel-open" type="radio" id="carousel-5" name="carousel" aria-hidden="true" hidden="">
+      <div class="carousel-item">
+        <div class="grid-item">
           <h3 style="visibility: hidden;">Regtech</h3>
           <h4>Digital Identity</h4>
           <div class="grid-item_container">
@@ -436,11 +519,8 @@
             </div>
           </div>
         </div>
-      </div>
 
-      <div class="c_table_category">
-
-        <div class="grid-item borderlined">
+        <div class="grid-item">
           <h3>Payments</h3>
           <h4>Ecommerce Payments</h4>
           <div class="grid-item_container">
@@ -464,13 +544,54 @@
             </div>
           </div>
         </div>
+
       </div>
 
       <div class="methodology">
-        <p><strong>Methodology</strong>: Platformable tracks all fintech globally that are accredited or known to use bank APIs. We then review what products they are making available and tally them according to category, and we measure other characteristics such as their target customer segments and business model/monetisation approaches. We review each fintech at least once every three months.</p>
+        <p><strong>Methodology</strong>: Platformable tracks all fintech globally that are accredited or known to use
+          bank APIs. We then review what products they are making available and tally them according to category, and we
+          measure other characteristics such as their target customer segments and business model/monetisation
+          approaches. We review each fintech at least once every three months.</p>
       </div>
-    </div>
 
+      <label for="carousel-3" class="carousel-control prev control-1">‹</label>
+      <label for="carousel-2" class="carousel-control next control-1">›</label>
+
+      <label for="carousel-1" class="carousel-control prev control-2">‹</label>
+      <label for="carousel-3" class="carousel-control next control-2">›</label>
+
+      <label for="carousel-2" class="carousel-control prev control-3">‹</label>
+      <label for="carousel-1" class="carousel-control next control-3">›</label>
+
+      <label for="carousel-3" class="carousel-control prev control-4">‹</label>
+      <label for="carousel-5" class="carousel-control next control-4">›</label>
+
+      <label for="carousel-4" class="carousel-control prev control-5">‹</label>
+      <label for="carousel-1" class="carousel-control next control-5">›</label>
+
+
+      <ol class="carousel-indicators">
+        <li>
+          <label for="carousel-1" class="carousel-bullet">•</label>
+        </li>
+        <li>
+          <label for="carousel-2" class="carousel-bullet">•</label>
+        </li>
+        <li>
+          <label for="carousel-3" class="carousel-bullet">•</label>
+        </li>
+        </li>
+        <li>
+          <label for="carousel-4" class="carousel-bullet">•</label>
+        </li>
+        </li>
+        <li>
+          <label for="carousel-5" class="carousel-bullet">•</label>
+        </li>
+      </ol>
+
+    </div>
+  </div>
 </body>
 
 </html>

@@ -60,16 +60,10 @@
 
     .c_table_category {
       padding: 5%;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    .grid-item {
-      width: 45%;
-      padding: 1% 0;
-      height: 35vh;
+      display: grid;
+      grid-gap: 1em; 
+      grid-template-columns:repeat(2, 1fr);
+      grid-template-rows: minmax(100px, 1fr);
     }
 
     .grid-item_category {
@@ -178,16 +172,11 @@
 
     @media only screen and (max-width: 768px) {
       .c_table_category {
-        flex-direction: column;
+        display: block;
       }
 
       .borderlined {
         border: none;
-      }
-
-      .grid-item {
-        width: 95%;
-        height: inherit;
       }
 
       .button-item {
@@ -214,13 +203,12 @@
     <div id="chart-c_tableIND">
 
       <div class="c_table_category">
-        
         <div class="grid-item">
           <h3>Payments</h3>
           <h4>P2P Payments</h4>
           <div class="grid-item_container">
             <div class="grid-img">
-              <a href="https://www.mobilepay.dk/" target="_blank" rel="noopener noreferrer"><img src="assets/mobile_pay.svg" alt="" width="80" /></a>
+              <a href="https://www.mobilepay.dk/" target="_blank" rel="noopener noreferrer"><img src="assets/mobile_pay.svg" alt="Mobile pay logo and Denmark flag" width="80" /></a>
             </div>
 
             <div class="grid-content">
@@ -241,10 +229,11 @@
         </div>
 
         <div class="grid-item">
+          <h3 style="visibility: hidden;">Payments</h3>
           <h4>Card & Wallet Management</h4>
           <div class="grid-item_container">
             <div class="grid-img">
-              <a href="https://www.i-saku.com/" target="_blank" rel="noopener noreferrer"><img src="assets/i_saku.svg" alt="" width="80" /></a>
+              <a href="https://www.i-saku.com/" target="_blank" rel="noopener noreferrer"><img src="assets/i_saku.svg" alt="I.saku logo and Indonesia flag" width="80" /></a>
             </div>
 
             <div class="grid-content">
@@ -268,7 +257,7 @@
           <h4>FX</h4>
           <div class="grid-item_container">
             <div class="grid-img">
-              <a href="https://www.azafinance.com/transferzero/" target="_blank" rel="noopener noreferrer"><img src="assets/transfer_zero.svg" alt="" width="80" /></a>
+              <a href="https://www.azafinance.com/transferzero/" target="_blank" rel="noopener noreferrer"><img src="assets/transfer_zero.svg" alt="Transfer Zero logo and Ghana flag" width="80" /></a>
             </div>
 
             <div class="grid-content">
@@ -292,7 +281,7 @@
           <h4>Merchant Payments</h4>
           <div class="grid-item_container">
             <div class="grid-img">
-              <a href="https://dlocal.com/" target="_blank" rel="noopener noreferrer"><img src="assets/d_local.svg" alt="" width="80" /></a>
+              <a href="https://dlocal.com/" target="_blank" rel="noopener noreferrer"><img src="assets/d_local.svg" alt="D Local logo and Uruguay flag" width="80" /></a>
             </div>
 
             <div class="grid-content">
@@ -320,7 +309,7 @@
         <h4>Digital Banking</h4>
         <div class="grid-item_container">
           <div class="grid-img">
-            <a href="https://www.wise.us/" target="_blank" rel="noopener noreferrer"><img src="assets/wise.svg" alt="" width="80" /></a>
+            <a href="https://www.wise.us/" target="_blank" rel="noopener noreferrer"><img src="assets/wise.svg" alt="Wise logo and USA flag" width="80" /></a>
           </div>
 
           <div class="grid-content">
@@ -345,7 +334,7 @@
         <h4>Account keeping and budgeting</h4>
         <div class="grid-item_container">
           <div class="grid-img">
-            <a href="https://youngmoney.sparnord.dk/" target="_blank" rel="noopener noreferrer"><img src="assets/young_money.svg" alt="" width="80" /></a>
+            <a href="https://youngmoney.sparnord.dk/" target="_blank" rel="noopener noreferrer"><img src="assets/young_money.svg" alt="Young Money Logo and Denmark flag" width="80" /></a>
           </div>
 
           <div class="grid-content">
@@ -373,7 +362,7 @@
         <h4>Consumer credit Services</h4>
         <div class="grid-item_container">
           <div class="grid-img">
-            <a href="https://www.krungsri.com/bank/th/krungsri-consumer/home.html" target="_blank" rel="noopener noreferrer"><img src="assets/krungsri.svg" alt="" width="80" /></a>
+            <a href="https://www.krungsri.com/bank/th/krungsri-consumer/home.html" target="_blank" rel="noopener noreferrer"><img src="assets/krungsri.svg" alt="Krungsri logo and Thailand flag" width="80" /></a>
           </div>
 
           <div class="grid-content">
@@ -394,10 +383,11 @@
       </div>
 
       <div class="grid-item borderlined">
+        <h3 style="visibility: hidden;">Leading</h3>
         <h4>Alternative lending</h4>
         <div class="grid-item_container">
           <div class="grid-img">
-            <a href="https://www.kiva.org/" target="_blank" rel="noopener noreferrer"><img src="assets/kiva.svg" alt="" width="80" /></a>
+            <a href="https://www.kiva.org/" target="_blank" rel="noopener noreferrer"><img src="assets/kiva.svg" alt="Kiva logo and USA flag" width="80" /></a>
           </div>
 
           <div class="grid-content">
@@ -424,7 +414,7 @@
         <h4>Crypto Exchange trading</h4>
         <div class="grid-item_container">
           <div class="grid-img">
-            <a href="https://bitbay.net/en" target="_blank" rel="noopener noreferrer"><img src="assets/bitbay.svg" alt="" width="80" /></a>
+            <a href="https://bitbay.net/en" target="_blank" rel="noopener noreferrer"><img src="assets/bitbay.svg" alt="Bitbay logo and Malta flag" width="80" /></a>
           </div>
 
           <div class="grid-content">

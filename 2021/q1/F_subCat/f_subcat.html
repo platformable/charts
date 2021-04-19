@@ -205,7 +205,7 @@ var myChart = new Chart(ctx, {
             ],
             borderWidth: 0,
             barThickness: 10,
-       
+      
         minBarLength: 1
         }    
     ]
@@ -286,6 +286,17 @@ var myChart = new Chart(ctx, {
 				});
 			}
 		},
+    legend: {
+            display: true,
+            position: 'top',
+            align: 'end',
+            fullWidth: false,
+            fontSize: 13,
+            labels: {
+              boxWidth: 12,//coloured boxes 
+              fontColor: '#1b014c',
+            },
+          },
     }
 });
 </script>
