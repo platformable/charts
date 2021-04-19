@@ -37,7 +37,7 @@
       width: 1000px;
           }  
           .chart-container {
-      margin: 0 auto;
+      margin: 5% auto;
     }
         #chartdiv{
           width:60%;
@@ -195,19 +195,11 @@ var myChart = new Chart(ctx, {
         showScale: false,
         title: {
             display: true,
-            text: 'Number of Fintechs',
-            fontSize : 14,
-            position:'bottom',
-            align:'end',
-            textDirection:'rtl',
+            fontColor:'#1b014c',
+          
+            padding:'8'
         },
-        plugins: {
-            legend: {
-                display: true,
-                labels: {
-                }
-            }
-        },
+        
         scales: {
             yAxes: [{
                 display:true,
@@ -230,8 +222,15 @@ var myChart = new Chart(ctx, {
             ticks: {
               fontSize: 10,
               fontStyle: 'bold',
-              fontColor:'#1b014c',
+              fontColor:'black',
             },
+            scaleLabel:{
+                  display:true,
+                  labelString:'Number of Fintechs',
+                  fontStyle: 'bold',
+                  fontSize: 14,
+                  
+                },
             gridLines: {
                 drawBorder: false,
                 display: false
@@ -263,6 +262,7 @@ var myChart = new Chart(ctx, {
             labels: {
               boxWidth: 12,//coloured boxes 
               fontColor: '#1b014c',
+              
             },
           },
     }
