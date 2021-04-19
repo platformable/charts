@@ -6,6 +6,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>C_tableSME carousel</title>
+  <link rel="icon" type="image/png" href="../../general_assets/img/favicon.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -58,9 +61,10 @@
     }
 
     .carousel-control {
-      background: rgba(0, 0, 0, 0.28);
+      background: #1b014c;
       border-radius: 50%;
-      color: #fff;
+      color: #ffd23f;
+      opacity: 0.8;
       cursor: pointer;
       display: none;
       font-size: 40px;
@@ -86,8 +90,8 @@
     }
 
     .carousel-control:hover {
-      background: rgba(0, 0, 0, 0.8);
-      color: #aaaaaa;
+      background: #1b014c;
+      opacity: 1;
     }
 
     #carousel-1:checked~.control-1,
@@ -116,14 +120,14 @@
     }
 
     .carousel-bullet {
-      color: gray;
+      color: #ffd23f;
       cursor: pointer;
       display: block;
       font-size: 35px;
     }
 
     .carousel-bullet:hover {
-      color: #aaaaaa;
+      color: #1b014c;
     }
 
     #carousel-1:checked~.control-1~.carousel-indicators li:nth-child(1) .carousel-bullet,
@@ -131,7 +135,7 @@
     #carousel-3:checked~.control-3~.carousel-indicators li:nth-child(3) .carousel-bullet,
     #carousel-4:checked~.control-4~.carousel-indicators li:nth-child(4) .carousel-bullet,
     #carousel-5:checked~.control-5~.carousel-indicators li:nth-child(5) .carousel-bullet {
-      color: #428bca;
+      color: #1b014c;
     }
 
    /*CHART*/
@@ -263,8 +267,8 @@
   <div class="carousel">
     <div class="top-charts">
       <div class="title">
-        <h3>New products aimed at Individuals/Household end users</h3>
-        <p>Q1 2021 (N=143)</p>
+        <h3>CONSUMERS - Q1 New Products aimed at SMEs</h3>
+        <p>(N=126)</p>
       </div>
       <div class="chart-icon"> <a href="../../index.html" title="back to home" id="logo"> <img
             src="../../general_assets/img/logo.svg" alt="platformable logo with blue letters and blue square"
@@ -490,12 +494,11 @@
             </div>
           </div>
         </div>
-     </div>
+      </div>
 
       <!--FIVE 🎠-->
       <input class="carousel-open" type="radio" id="carousel-5" name="carousel" aria-hidden="true" hidden="">
       <div class="carousel-item">
-
         <div class="grid-item ">
           <h3>Regtech</h3>
           <h4>Digital Identity</h4>
