@@ -37,7 +37,7 @@
       width: 1000px;
           }  
           .chart-container {
-      margin: 0 auto;
+      margin: 5% auto;
     }
         #chartdiv{
           width:60%;
@@ -193,14 +193,7 @@ var myChart = new Chart(ctx, {
         responsive:true,
         maintainAspectRatio:false,
         showScale: false,
-        title: {
-            display: true,
-            text: 'Number of Fintechs',
-            fontSize : 14,
-            position:'bottom',
-            align:'end',
-            textDirection:'rtl',
-        },
+        
         plugins: {
             legend: {
                 display: true,
@@ -232,6 +225,12 @@ var myChart = new Chart(ctx, {
               fontStyle: 'bold',
               fontColor:'#1b014c',
             },
+            scaleLabel:{
+                  display:true,
+                  labelString:'Number of Fintechs',
+                  fontStyle: 'bold',
+                  fontSize: 14,
+                },
             gridLines: {
                 drawBorder: false,
                 display: false
