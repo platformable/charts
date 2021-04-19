@@ -2,29 +2,31 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>SE_incident</title>
-  <link rel="icon" type="image/png" href="./../general_assets/img/favicon.png">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Se_incident</title>
+  <link rel="icon" type="image/png" href="./../general_assets/img/favicon.png" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
 </head>
 
 <body>
   <!--CDN-->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/echarts@5/dist/echarts.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"
+    integrity="sha512-d9xgZrVZpmmQlfonhQUvTR7lMPtO7NkZMkA0ABN3PHCbKA5nqylQ/yWlFAyY6hYgdF1Qh6nYiuADWwKB4C2WSw=="
+    crossorigin="anonymous"></script>
   <!--STYLESHEET-->
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-      font-family: "Roboto", sans-serif;
+      font-family: 'Roboto', sans-serif;
     }
 
     html {
       height: -webkit-fill-available;
-      min-height: 100vh;
     }
 
     body {
@@ -37,7 +39,7 @@
     #chart {
       margin: 5% auto;
       padding: 0 5%;
-      width: 942px; /*THIS GIVES THE CHART EXACTLY 800PX*/
+      width: 800px;
     }
 
     .chart-container {
@@ -50,22 +52,18 @@
       justify-content: space-between;
     }
 
-    .title {
-      width: 45%;
-    }
-
     .title h3 {
       font-weight: bold;
       font-size: 20px;
     }
 
     .chart-icon {
-      justify-content: flex-end;
       text-align: right;
+      justify-content: flex-end;
     }
+
     .methodology {
-      margin: 5% auto;
-      padding: 0 2%;
+      margin: 3% auto;
     }
 
     .methodology p {
@@ -87,121 +85,130 @@
     }
   </style>
 
+  <!--HTML-->
+
+  <!--HTML-->
   <div id="chart">
+
     <div class="top-charts">
       <div class="title">
         <h3>Quarterly number of API security incidents</h3>
         <p>2020 - Q1 2021</p>
       </div>
-      <div class="chart-icon"> <a href="./../index.html" title="back to home" id="logo"> <img
-            src="./../general_assets/img/logo.svg" alt="platformable logo with blue letters and blue square"
-            width="160px" /></a>
+      <div class="chart-icon">
+        <a href="./../index.html" title="back to home" id="logo"> <img src="./../general_assets/img/logo.svg"
+            alt="platformable logo with blue letters and blue square" width="160px" /></a>
       </div>
     </div>
 
-    <div class="chart-container" style="position: relative; height:50vh;width: 800;">
-      <div id="st_oas" style="height: 100%; width: 800;"></div>
-      <!--this library needs the 100% height-->
+    <div class="container">
+      <canvas id="q4FintechChart" width="400" height="200"></canvas>
+      <div class="methodology">
+        <p><strong>Methodology</strong>: Platformable tracks API-related security incidents uncovered globally
+          on a quarterly basis, based on two key sources: </p>
+        <p> 1) Weekly API vulnerabilities blog posts from 42Crunch: <a href="https://apisecurity.io/">APIsecurity.io</a>
+        </p>
+        <p>2) Data breach weekly security report from <a href="https://www.gearbrain.com/">gearbrain.com</a></p>
+      </div>
+
     </div>
-    <div class="methodology">
-      <p><strong>Methodology</strong>: Platformable tracks API-related security incidents uncovered globally on a quarterly basis, based on two key sources: </p>
-       <p> 1) Weekly API vulnerabilities blog posts from 42Crunch: <a href="https://apisecurity.io/">APIsecurity.io</a></p>
-        <p>2) Data breach weekly security report from <a href ="https://www.gearbrain.com/">gearbrain.com</a></p>
-    </div>
-  </div>
-  <script type="text/javascript">
-    var dom = document.getElementById("st_oas");
-    var myChart = echarts.init(dom);
-    var app = {};
 
-    var option;
-
-    option = {
-      tooltip: {
-        trigger: 'axis',
-        axisPointer: {            // Use axis to trigger tooltip
-          type: 'shadow'        // 'shadow' as default; can also be 'line' or 'shadow'
-        },
-      },
-      color: [ '#20144e','#ffd23f'],
-      textStyle: {
-        fontFamily: 'Roboto',
-        color: '#000',
-        //fontSize: 13, default 12
-        //fontWeight:'bold',
-      },
-      legend: {       
-        itemWidth:14,//squared boxes
-        //itemHeight:14, which makes the perfect squares
-        data: ['Security incidents in Open Banking','Security incidents in other sectors' ],
-        textStyle: {
-        },
-      },
-      grid: {
-        top:70,
-        left: '3%',
-        right: '3%',
-        bottom: '8%',
-        containLabel: true
-      },
-      xAxis: {
-        min:0,
-        max:100,
-        axisLabel:{
-          formatter: '{value} %',
-        },
-
-      },
-      yAxis: {
-        axisLine: {
-          show: false,
-        },
-        axisTick: {
-          show: false,
-        },
-        data: ['Q1 2021', 'Q4 2020', 'Q3 2020', 'Q2 2020', 'Q1 2020']//1st country in mockup is the last country in our chart
-      },
-      series: [
-      {
-        name: 'Security incidents in Open Banking',
-        data: [12,9,14,6,9],
+    <script>
+      Chart.defaults.global.animation;
+      Chart.defaults.global.defaultFontColor = '#1b014c';
+      var ctx = document.getElementById('q4FintechChart');
+      var myChart = new Chart(ctx, {
         type: 'bar',
-        barWidth: 20,
-        stack: 'total',
-        label: {
-          show: true,
-          formatter: '{c}%',
-        },
-        emphasis: {
-          focus: 'series'
-        },
-        barMinHeight:45,//helps when data is too small such as 3
-      },
-      {
-        name: 'Security incidents in other sectors',
-        data: [88,91,86,94,91],
-        type: 'bar',
-        barWidth: 20,
-        stack: 'total',
-        label: {
-          show: true,
-          formatter: '{c}%',
-        },
-        emphasis: {
-          focus: 'series'
-        },
-        barMinHeight: 45,//helps when data is too small such as 3
+        data: {
+          labels: [
+            'Q1 2020',
+            'Q2 2020',
+            'Q3 2020',
+            'Q4 2020',
+            'Q1 2021',
+          ],
+          datasets: [
+            {
+              label: 'Security incidents in Open Banking',
+              data: [
+                3, 3, 8, 3, 5
 
-      },
-      
+              ],
+              backgroundColor: [
+                '#1b014c',
+                '#1b014c',
+                '#1b014c',
+                '#1b014c',
+                '#1b014c',
+              ],
+              borderWidth: 0,
+              barThickness: 90,
+              maxBarThickness: 90,
+              minBarLength: 2
+            },
+            {
+              label: 'Security incidents in other sectors',
+              data: [
+                31, 45, 48, 31, 36
 
-      ]
-    };
-    if (option && typeof option === 'object') {
-      myChart.setOption(option);
-    }
+              ],
+              backgroundColor: [
+                '#ffd23f',
+                '#ffd23f',
+                '#ffd23f',
+                '#ffd23f',
+                '#ffd23f',
+              ],
+              borderWidth: 0,
+              barThickness: 90,
+              maxBarThickness: 90,
+              minBarLength: 2
+            }
+          ],
+        },
+        options: {
+          animation: {
+            onComplete: function () {
+              var chartInstance = this.chart,
+                ctx = chartInstance.ctx;
+              ctx.font = Chart.helpers.fontString(Chart.defaults.global.defaultFontSize, Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
+              ctx.textAlign = 'center';
+              ctx.textBaseline = 'bottom';
+              this.data.datasets.forEach(function (dataset, i) {
+                var meta = chartInstance.controller.getDatasetMeta(i);
 
-  </script>
+                meta.data.forEach(function (bar, index) {
+                  var data = dataset.data[index];
+                  data > 0 ? ctx.fillText(data, bar._model.x, bar._model.y - 5) : ''
+                });
+              });
+            }
+          },
+          responsive: true,
+          scales: {
+            xAxes: [{
+              stacked: true
+            }],
+            yAxes: [{
+              stacked: true
+            }]
+          },
+          legend: {
+            display: true,
+            position: 'top',
+            align: 'end',
+            fullWidth: false,
+            fontSize: 13,
+            labels: {
+              boxWidth: 12,//coloured boxes 
+              fontColor: '#1b014c',
+            },
+          },
+
+        }
+      });
+    </script>
+
 </body>
 
 </html>
