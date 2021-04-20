@@ -1,3 +1,3 @@
 Live
 
-https://platformable-charts-q1.netlify.app/
+https://platformable2021q1charts.netlify.app/
