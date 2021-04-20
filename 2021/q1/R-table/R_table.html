@@ -1,398 +1,464 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>R_table</title>
+    <link
+      rel="icon"
+      type="image/png"
+      href="./../general_assets/img/favicon.png"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>R_table</title>
-  <link rel="icon" type="image/png" href="./../general_assets/img/favicon.png">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-</head>
+  <body>
+    <!--STYLESHEET-->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: "Roboto", sans-serif;
+      }
 
-<body>
-  <!--STYLESHEET-->
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: "Roboto", sans-serif;
-    }
+      html {
+        height: -webkit-fill-available;
+      }
 
-    html {
-      height: -webkit-fill-available;
-    }
+      body {
+        margin: 0 auto;
+        min-height: 100vh;
+        min-height: -webkit-fill-available;
+        overflow-x: hidden;
+      }
 
-    body {
-      margin: 0 auto;
-      min-height: 100vh;
-      min-height: -webkit-fill-available;
-      overflow-x: hidden;
-    }
+      #chart-grid {
+        margin: 0 auto;
+        width: 800px;
+        padding: 0 2%;
+      }
 
-    #chart-grid {
-      margin: 0 auto;
-      width: 800px;
-      padding: 0 2%;
-    }
+      header {
+        margin: 5% auto;
+        padding: 0 1%;
+        display: flex;
+        justify-content: space-between;
+      }
 
-    header {
-      margin: 5% auto;
-      padding: 0 1%;
-      display: flex;
-      justify-content: space-between;
-    }
+      header h3 {
+        width: 100%;
+      }
 
-    header h3 {
-      width: 100%;
-    }
+      h3 {
+        font-size: 20px;
+      }
 
-    h3 {
-      font-size: 20px;
-    }
+      .title p {
+        font-size: 18px;
+      }
 
-    .title p {
-      font-size: 18px;
-    }
+      #logo img {
+        margin: 0 auto 5%;
+        display: block;
+        text-align: center;
+      }
 
-    #logo img {
-      margin: 0 auto 5%;
-      display: block;
-      text-align: center;
-    }
+      #chart-c-table {
+        padding: 5%;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+      }
 
-    #chart-c-table {
-      padding: 5%;
-      display: flex;
-      align-items: center;
-      flex-wrap: wrap;
-    }
+      .grid-item {
+        width: 110%;
+        padding: 1%;
+        display: flex;
+        justify-content: space-between;
+      }
+      .country {
+        margin-top: 10px;
+      }
 
-    .grid-item {
-      width: 110%;
-      padding: 1%;
-      display: flex;
-      justify-content: space-between;
-    }
-    .country {
-      
-      margin-top: 10px;
-    }
+      p {
+        font-size: 13px;
+      }
 
-    p {
-      font-size: 13px;
+      .methodology {
+        margin: 3% auto;
+        padding: 0 2%;
+      }
 
-    }
+      .methodology p {
+        font-size: 12px;
+        color: #7f7f7f;
+      }
 
-    .methodology {
-      margin: 3% auto;
-      padding: 0 2%;
-    }
-
-    .methodology p {
-      font-size: 12px;
-      color: #7f7f7f;
-    }
-
-    .grid-item_container {
-      display: flex;
-      justify-content: space-between;
-      flex-direction: row;
-      align-content: space-between;
-
-    }
-    .grid-left{
+      .grid-item_container {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        align-content: space-between;
+      }
+      .grid-left {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
         align-items: flex-start;
         padding-right: 3%;
         padding-bottom: 2%;
-       width: 100px;
-        
-    }
+        width: 100px;
+      }
 
-    .offers {
-      width: 550px;
-      padding-left: 0;
+      .offers {
+        width: 550px;
+        padding-left: 0;
+      }
 
-    }
-
-    .img {
-      display: block;
-      text-align: center;
-      position: relative;
-      height: 20px;
-      width: 35px;
-
-    }
-
-    @media only screen and (max-width: 600px) {
-      header {
-        flex-direction: column-reverse;
+      .img {
+        display: block;
         text-align: center;
+        position: relative;
+        height: 20px;
+        width: 35px;
       }
 
-      header h3 {
-        width: 90%;
+      @media only screen and (max-width: 600px) {
+        header {
+          flex-direction: column-reverse;
+          text-align: center;
+        }
+
+        header h3 {
+          width: 90%;
+        }
       }
-    }
 
-    @media only screen and (max-width: 768px) {
-      #chart-c-table {
-        flex-direction: column;
+      @media only screen and (max-width: 768px) {
+        #chart-c-table {
+          flex-direction: column;
+        }
+
+        .grid-item {
+          width: 95%;
+        }
       }
 
-      .grid-item {
-        width: 95%;
+      @media only screen and (min-width: 601px) and (max-width: 768px) {
+        header h3 {
+          width: 45%;
+        }
       }
-    }
+    </style>
 
-    @media only screen and (min-width: 601px) and (max-width: 768px) {
-      header h3 {
-        width: 45%;
-      }
-    }
-  </style>
+    <!--HTML-->
+    <div id="chart-grid">
+      <header>
+        <div class="title">
+          <h3>Key Open Banking Regulatory Development</h3>
+          <p>Q1 2021</p>
+        </div>
+        <div>
+          <a href="./../index.html" title="back to home" id="logo">
+            <img
+              src="./../general_assets/img/logo.svg"
+              alt="platformable logo with blue letters and blue square"
+              width="160px"
+          /></a>
+        </div>
+      </header>
 
-  <!--HTML-->
-  <div id="chart-grid">
-    <header>
-      <div class="title">
-        <h3>Key Open Banking Regulatory Development</h3>
-        <p>Q1 2021</p>
-      </div>
-      <div>
-        <a href="./../index.html" title="back to home" id="logo"> <img src="./../general_assets/img/logo.svg"
-            alt="platformable logo with blue letters and blue square" width="160px" /></a>
+      <div id="chart-c-table">
+        <div class="grid-item">
+          <div class="grid-item_container">
+            <div class="grid-left">
+              <div class="grid-img">
+                <img
+                  src="assest/Australia flag.png"
+                  class="img"
+                  alt="Australia"
+                  width=""
+                />
+              </div>
+              <div>
+                <p class="country"><strong>Australia</strong></p>
+              </div>
+            </div>
+            <div class="offers">
+              <p>
+                Continuation of implementation of Consumer Data Right (CDR)
+                obligations, with banks required to start opening customer data
+                and other institutions required to share product reference data
+                by 1 February 2021.
+              </p>
+            </div>
+          </div>
         </div>
-    </header>
+        <!--<hr style="width: 100%;border-top: 2px #8c8b8b;"/>-->
 
-    <div id="chart-c-table">
+        <div class="grid-item">
+          <div class="grid-item_container">
+            <div class="grid-left">
+              <div class="grid-img">
+                <img class="img" src="assest/Brazil flag.png" alt="Brazil" />
+              </div>
+              <div>
+                <p class="country"><strong>Brazil</strong></p>
+              </div>
+            </div>
+            <div class="offers">
+              <p>
+                Larger banks mandated to open product, account and payments APIs
+                from 1 February 2021.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="grid-item">
+          <div class="grid-item_container">
+            <div class="grid-left">
+              <div class="grid-img">
+                <img
+                  src="assest/Colombia flag.png"
+                  class="img"
+                  alt="colombia"
+                />
+              </div>
+              <div>
+                <p class="country"><strong>Colombia</strong></p>
+              </div>
+            </div>
+            <div class="offers">
+              <p>
+                Consultation on Open Banking framework closed on 22 January
+                2021.
+              </p>
+            </div>
+          </div>
+        </div>
 
-      <div class="grid-item">
-        <div class="grid-item_container">
-          <div class='grid-left'>
-            <div class="grid-img">
-              <img src="assest/Australia flag.png" class='img' alt="Australia" width="" />
+        <div class="grid-item">
+          <div class="grid-item_container">
+            <div class="grid-left">
+              <div class="grid-img">
+                <img class="img" src="assest/Europe flag.png" alt="EU" />
+              </div>
+              <div>
+                <p class="country"><strong>EU</strong></p>
+              </div>
             </div>
-            <div>
-              <p class='country'><strong>Australia</strong></p>
+            <div class="offers">
+              <p>
+                The European Banking Authority (EBA) set new deadlines for
+                national competent authorities to ensure banks remove any
+                remaining obstacles that prevent third party providers from
+                accessing payment accounts by 30 April 2021
+              </p>
             </div>
-          </div>
-          <div class="offers">
-            <p>Continuation of implementation of Consumer Data Right (CDR) obligations, with banks required to start
-              opening customer data and other institutions required to share product reference data by 1 February 2021.
-            </p>
           </div>
         </div>
-      </div>
-      <!--<hr style="width: 100%;border-top: 2px #8c8b8b;"/>-->
+        <div class="grid-item">
+          <div class="grid-item_container">
+            <div class="grid-left">
+              <div class="grid-img">
+                <img
+                  src="assest/Kenya map.png"
+                  class="img"
+                  alt="Kenya"
+                  width=""
+                />
+              </div>
+              <div>
+                <p class="country"><strong>Kenya</strong></p>
+              </div>
+            </div>
+            <div class="offers">
+              <p>
+                Consultation on the draft Kenya National Payments System Vision
+                and Strategy 2021 – 2025 closed on 29 January 2021.
+              </p>
+            </div>
+          </div>
+        </div>
 
-      <div class="grid-item">
-        <div class="grid-item_container">
-          <div class='grid-left'>
-            <div class="grid-img">
-              <img class='img' src="assest/Brazil flag.png" alt="Brazil" />
+        <div class="grid-item">
+          <div class="grid-item_container">
+            <div class="grid-left">
+              <div class="grid-img">
+                <img class="img" src="assest/Nigeria flag.png" alt="Nigeria" />
+              </div>
+              <div>
+                <p class="country"><strong>Nigeria</strong></p>
+              </div>
             </div>
-            <div>
-              <p class='country'><strong>Brazil</strong></p>
+            <div class="offers">
+              <p>
+                The Central Bank of Nigeria (CBN) introduced Framework for
+                Regulatory Sandbox and issued the Regulatory Framework for Open
+                Banking in Nigeria in February 2021.
+              </p>
             </div>
-          </div>
-          <div class="offers">
-            <p>Larger banks mandated to open product, account and payments APIs from 1 February 2021.</p>
           </div>
         </div>
-      </div>
-      <div class="grid-item">
-        <div class="grid-item_container">
-          <div class='grid-left'>
-            <div class="grid-img">
-              <img src="assest/Colombia flag.png" class='img' alt="colombia" />
+        <div class="grid-item">
+          <div class="grid-item_container">
+            <div class="grid-left">
+              <div class="grid-img">
+                <img
+                  src="assest/Pakistan flag.png"
+                  class="img"
+                  alt="Pakistan"
+                />
+              </div>
+              <div>
+                <p class="country"><strong>Pakistan</strong></p>
+              </div>
             </div>
-            <div>
-              <p class='country'><strong>Colombia</strong></p>
+            <div class="offers">
+              <p>
+                Launched the first phase of Instant Payment Systems Raast on 11
+                January 2021 Opened public consultation for Digital Bank
+                Regulatory Framework on 26 March 2021, with digital banks
+                required to submit an open API strategy.
+              </p>
             </div>
-          </div>
-          <div class="offers">
-            <p>Consultation on Open Banking framework closed on 22 January 2021.</p>
           </div>
         </div>
-      </div>
 
-      <div class="grid-item">
-        <div class="grid-item_container">
-          <div class='grid-left'>
-            <div class="grid-img">
-              <img class='img' src="assest/Europe flag.png" alt="EU" />
+        <div class="grid-item">
+          <div class="grid-item_container">
+            <div class="grid-left">
+              <div class="grid-img">
+                <img class="img" src="assest/Russia flag.png" alt="Russia" />
+              </div>
+              <div>
+                <p class="country"><strong>Russia</strong></p>
+              </div>
             </div>
-            <div>
-              <p class='country'><strong>EU</strong></p>
+            <div class="offers">
+              <p>
+                Launched Fintech Sandbox in February 2021, aiming at boosting
+                innovation.
+              </p>
             </div>
-          </div>
-          <div class="offers">
-            <p>The European Banking Authority (EBA) set new deadlines for national competent authorities to ensure banks
-              remove any remaining obstacles that prevent third party providers from accessing payment accounts by 30
-              April 2021</p>
           </div>
         </div>
-      </div>
-      <div class="grid-item">
-        <div class="grid-item_container">
-          <div class='grid-left'>
-            <div class="grid-img">
-              <img src="assest/Kenya map.png" class='img' alt="Kenya" width="" />
+        <div class="grid-item">
+          <div class="grid-item_container">
+            <div class="grid-left">
+              <div class="grid-img">
+                <img
+                  src="assest/Saudi Arabia flag.png"
+                  class="img"
+                  alt="Saudi Arabia"
+                />
+              </div>
+              <div>
+                <p class="country"><strong>Saudi Arabia</strong></p>
+              </div>
             </div>
-            <div>
-              <p class='country'><strong>Kenya</strong></p>
+            <div class="offers">
+              <p>Introduced Open Banking Policy</p>
             </div>
-          </div>
-          <div class="offers">
-            <p>Consultation on the draft Kenya National Payments System Vision and Strategy 2021 – 2025 closed on 29
-              January 2021.</p>
           </div>
         </div>
-      </div>
+        <div class="grid-item">
+          <div class="grid-item_container">
+            <div class="grid-left">
+              <div class="grid-img">
+                <img
+                  class="img"
+                  src="assest/South Korea flag.png"
+                  alt="South Korea"
+                />
+              </div>
+              <div>
+                <p class="country"><strong>South Korea</strong></p>
+              </div>
+            </div>
+            <div class="offers">
+              <p>
+                Unveiled its work agenda for 2021 on 18 January 2021. One of the
+                tasks is to continue to promote the development and use of
+                contacless financiall services, including those via open
+                banking/open finance.
+              </p>
+            </div>
+          </div>
+        </div>
 
-      <div class="grid-item">
-        <div class="grid-item_container">
-          <div class='grid-left'>
-            <div class="grid-img">
-              <img class='img' src="assest/Nigeria flag.png" alt="Nigeria" />
+        <div class="grid-item">
+          <div class="grid-item_container">
+            <div class="grid-left">
+              <div class="grid-img">
+                <img src="assest/Taiwan map.png" class="img" alt="Taiwan" />
+              </div>
+              <div>
+                <p class="country"><strong>Taiwan</strong></p>
+              </div>
             </div>
-            <div>
-              <p class='country'><strong>Nigeria</strong></p>
+            <div class="offers">
+              <p>
+                Banks entered the second phase of Open Banking, which focuses on
+                consumer accounts and transactions information.
+              </p>
             </div>
-          </div>
-          <div class="offers">
-            <p>The Central Bank of Nigeria (CBN) introduced Framework for Regulatory Sandbox and issued the Regulatory
-              Framework for Open Banking in Nigeria in February 2021.</p>
           </div>
         </div>
-      </div>
-      <div class="grid-item">
-        <div class="grid-item_container">
-          <div class='grid-left'>
-            <div class="grid-img">
-              <img src="assest/Pakistan flag.png" class='img' alt="Pakistan" />
-            </div>
-            <div>
-              <p class='country'><strong>Pakistan</strong></p>
-            </div>
-          </div>
-          <div class="offers">
-            <p>Launched the first phase of Instant Payment Systems Raast on 11 January 2021
-              Opened public consultation for Digital Bank Regulatory Framework on 26 March 2021, with digital banks
-              required to submit an open API strategy.</p>
-          </div>
-        </div>
-      </div>
 
-      <div class="grid-item">
-        <div class="grid-item_container">
-          <div class='grid-left'>
-            <div class="grid-img">
-              <img class='img' src="assest/Russia flag.png" alt="Russia" />
+        <div class="grid-item">
+          <div class="grid-item_container">
+            <div class="grid-left">
+              <div class="grid-img">
+                <img class="img" src="assest/Uk flag.png" alt="UK" />
+              </div>
+              <div>
+                <p class="country"><strong>UK</strong></p>
+              </div>
             </div>
-            <div>
-              <p class='country'><strong>Russia</strong></p>
+            <div class="offers">
+              <p>
+                Published feedback on the Call for Input on Open Finance on 26
+                March 2021. Opened public consultation on the future governance
+                of UK Open Baning on 5 March 2021, in preparation to wind down
+                the Open Banking Implementation Entity.
+              </p>
             </div>
-          </div>
-          <div class="offers">
-            <p>Launched Fintech Sandbox in February 2021, aiming at boosting innovation.</p>
           </div>
         </div>
-      </div>
-      <div class="grid-item">
-        <div class="grid-item_container">
-          <div class='grid-left'>
-            <div class="grid-img">
-              <img src="assest/Saudi Arabia flag.png" class='img' alt="Saudi Arabia"/>
+        <div class="grid-item">
+          <div class="grid-item_container">
+            <div class="grid-left">
+              <div class="grid-img">
+                <img class="img" src="assest/USA flag.png" alt="USA" />
+              </div>
+              <div>
+                <p class="country"><strong>USA</strong></p>
+              </div>
             </div>
-            <div>
-              <p class='country'><strong>Saudi Arabia</strong></p>
+            <div class="offers">
+              <p>
+                Closed public consultation on Proposed Rulemaking on Consumer
+                Access to Financial Records, laying out initial foundation for
+                an open banking/finance framework.
+              </p>
             </div>
-          </div>
-          <div class="offers">
-            <p>Introduced Open Banking Policy</p>
           </div>
         </div>
-      </div>
-      <div class="grid-item">
-        <div class="grid-item_container">
-          <div class='grid-left'>
-            <div class="grid-img">
-              <img class='img' src="assest/South Korea flag.png" alt="South Korea" />
-            </div>
-            <div>
-              <p class='country'><strong>South Korea</strong></p>
-            </div>
-          </div>
-          <div class="offers">
-            <p>Unveiled its work agenda for 2021 on 18 January 2021. One of the tasks is to continue to promote the
-              development and use of contacless financiall services, including those via open banking/open finance.</p>
-          </div>
-        </div>
-      </div>
-                                      
-                                        
-                                            <div class="grid-item"> 
-                                                <div class="grid-item_container">
-                                                    <div class='grid-left'>
-                                                        <div class="grid-img">
-                                                            <img src="assest/Taiwan map.png" class='img' alt="Taiwan"/>
-                                                        </div>
-                                                            <div>
-                                                                <p class='country'><strong>Taiwan</strong></p>
-                                                            </div>         
-                                                    </div>         
-                                                    <div class="offers">
-                                                      <p>Banks entered the second phase of Open Banking, which focuses on consumer accounts and transactions information.</p>
-                                                    </div>
-                                                  </div>
-                                                </div>
-                                                
-                                                <div class="grid-item"> 
-                                                    <div class="grid-item_container">
-                                                        <div class='grid-left'>
-                                                            <div class="grid-img">
-                                                                <img class='img'src="assest/Uk flag.png" alt="UK"/>
-                                                            </div>
-                                                                <div>
-                                                                    <p class='country'><strong>UK</strong></p>
-                                                                </div>         
-                                                        </div>         
-                                                        <div class="offers">
-                                                          <p>Published feedback on the Call for Input on Open Finance on 26 March 2021.
-                                                        Opened public consultation on the future governance of UK Open Baning on 5 March 2021, in preparation to wind down the Open Banking Implementation Entity.</p>
-                                                        </div>
-                                                      </div>
-                                                    </div>
-                                                    <div class="grid-item"> 
-                                                        <div class="grid-item_container">
-                                                            <div class='grid-left'>
-                                                                <div class="grid-img">
-                                                                    <img class='img'src="assest/USA flag.png" alt="USA"/>
-                                                                </div>
-                                                                    <div>
-                                                                        <p class='country'><strong>USA</strong></p>
-                                                                    </div>         
-                                                            </div>         
-                                                            <div class="offers">
-                                                              <p>Closed public consultation on Proposed Rulemaking on Consumer Access to Financial Records, laying out initial foundation for an open banking/finance framework.</p>
-                                                            </div>
-                                                          </div>
-                                                        </div>
-                                                        
       </div>
       <div class="methodology">
-        <p><strong>Methodology</strong>: Platformable reviews progress and activities of all open banking regulations
-          around the globe and assesses progress of all actions</p>
+        <p>
+          <strong>Methodology</strong>: Platformable reviews progress and
+          activities of all open banking regulations around the globe and
+          assesses progress of all actions
+        </p>
       </div>
     </div>
-
-</body>
-
+  </body>
 </html>
