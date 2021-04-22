@@ -1,246 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-  </head>
 
-  <body>
-    <style>
-      body{
-       font-family: 'Roboto', sans-serif;
-        
-      }
-       #maindiv{
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            align-items: center;
-          }
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>st_bariso
+  </title>
+  <link rel="icon" type="image/png" href="./../general_assets/img/favicon.png">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
 
-        
+<body>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Roboto", sans-serif;
+    }
+    html {
+      height: -webkit-fill-available;
+    }
 
-        #chartdiv{
-          width:60%;
-          display: flex;
-          justify-content: flex-start;
-        }
+    body {
+      margin: 0 auto;
+      min-height: 100vh;
+      min-height: -webkit-fill-available;
+      overflow-x: hidden;
+    }
+    #chart {
+      margin: 5% auto;
+      padding: 0 5%;
+      width: 800px;
+    }
 
-        #headerdiv{
-            display: flex;
-            flex-direction: row;
-            justify-content: space-between;
-            align-items: center;
-            width:60%;
-            color:#1b014c;
-            font-weight: bold;
-        }
+    .chart-container {
+      margin: 0 auto;
+    }
+    
+    .top-charts {
+      margin: 5% auto;
+      display: flex;
+      justify-content: space-between;
+    }
 
-        #p{
-            color: grey;
-            font-size: 13px;
-            text-align:left;
-        }
+    .title {
+      width: 60%;
+    }
+    .title h3 {
+      font-weight: bold;
+      font-size: 20px;
+    }
 
-        h3{
-            font-size: 20px;
-        }
+    .chart-icon {
+      text-align: right;
+      justify-content: flex-end;
+    }
 
-        h3 span{
-          font-weight: 400;
-          font-size:16px;
-        }
+    .methodology {
+      margin: 3% auto;
+    }
 
-        #desc{
-          width:60%;
-        }
-          #chart
+    .methodology p {
+      font-size: 12px;
+      color: #7f7f7f;
+    }
 
-        #header-numbers{
-          font-weight: 100;
-        }
+    h2 {
+      font-size: 16px;
+    }
 
-          #Methodology{
-            font-size: 10px;
-          }
-
-
-          h2{
-            font-size:20px;
-            display:flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-          }
-
-          h2 span{
-            font-weight:400;
-          }
-
-        @media only screen and (max-width:1650px)
-            {h3{
-              font-size: 18px;
-            }}
-
-        @media only screen and (max-width:1055px)
-        {
-          #headerdiv{
-          display: flex;
-          flex-direction: column-reverse;
-
-        }
-
-        h3{
-          text-align: center;
-        }
-
-        }
-
-        @media only screen and (max-width:1084px)
-        {
-         
-        }
+    @media only screen and (max-width: 600px){
+      .top-charts {
+      flex-direction: column;
+    }
+    .title {
+      width: 85%;
+    }
+    .title,.chart-icon  {
+      text-align: center;
+      padding: 2%;
+    }
+    }
 
 
-        @media only screen and (max-width:600px)
-        {
-          #chartdiv{
-            width:90%;
-          }
-          #descdiv{
-          width:90%;
-        }
-        }
-    </style>
+  </style>
 
-    <div id="maindiv">
-      <div id="headerdiv">
-        <div>
-          <h2>
-            Global Open Banking Platforms<br> <span>Q4 2020 (N=599)</span>
-          </h2>
-          
-        </div>
-
-        <div>
-            <a href="#"
-            ><img id="logo" src="platformable-logo-blue.png" width="220px"
-            /></a>
-        </div>
+  <!--HTML-->
+  <div id="chart">
+    <div class="top-charts">
+      <div class="title">
+        <h3>Global Open Banking Platforms Use of ISO Standards in API Design</h3>
+        <p>Q1 2021 (N = 720)</p>
       </div>
-      <div id="chartdiv" ><canvas id="myChart" ></canvas></div>
-      <div id="desc">
-        <p id="Methodology">
-          <strong>Methodology:</strong>ed ut perspiciatis unde omnis iste natus
-          error sit voluptatem accusantium doloremque laudantium, totam rem
-          aperiam, eaque ipsa quae ab illo inventore veritatis et quasi
-          architecto beatae vitae dicta sunt explicabo. Nemo enim ipsam
-          voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia
-          consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
-          Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet,
-          consectetur, adipisci velit, sed quia non numquam eius modi tempora
-          incidunt ut labore et dolore magnam aliquam quaerat voluptatem. Ut
-          enim ad minima veniam, quis nostrum exercitationem ullam corporis
-          suscipit laboriosam, nisi ut aliquid ex ea commodi consequatur
-        </p>
+      <div class="chart-icon">
+        <a href="./../index.html" title="back to home" id="logo"> <img src="./../general_assets/img/logo.svg"
+            alt="platformable logo with blue letters and blue square" width="160px" /></a>
       </div>
     </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
-    <script>
-      var ctx = document.getElementById("myChart").getContext("2d");
-      Chart.defaults.global.defaultFontColor = "rgb(27,1,76)";
-      Chart.defaults.global.defaultFontFamily = "Arial";
-      Chart.defaults.global.defaultFontStyle = "Bold";
-      var myChart = new Chart(ctx, {
-        type: "bar",
-        data: {
-          labels: [
-            ["ISO 4217", "(currency)"],
-            ["ISO 8601", "(date YYYYMMDD)"],
-            ["ISO 3166", "(country)"],
-            ["ISO 20022", "(payments-frequency described)"],
+    <div class="chart-container" style="width: 800;">
+      <canvas id="st_bariso"></canvas>
+    </div>
+
+    <div class="methodology">
+      <p>
+        <strong>Methodology</strong>: Platformable tracks all banks globally and tallies those that have established an
+        open API platform. We then review how many API products are made available by each bank and tally them according
+        to category, and measure other API characteristics such as standards and specifications used, developer
+        experience strategies employed, and business model/monetisation approaches. We review each bank at least once
+        every three months.
+      </p>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js">
+  </script>
+
+  <script>
+    var ctx = document.getElementById('st_bariso').getContext('2d');
+    Chart.defaults.global.defaultFontColor = "#1B014C";
+    var myChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: [
+          ["ISO 4217 (currency)"],
+          ["ISO 8601 (date YYYYMMDD)"],
+          ["ISO 3166 (country)"],
+          ["ISO 20022 (payments-frequency)"],
+        ],
+        datasets: [{
+          label: "N° of Platforms",
+          data: [539, 536, 392, 321],
+          backgroundColor: [
+            "#FFD23F",
+            "#FFD23F",
+            "#FFD23F",
+            "#FFD23F"
           ],
-          datasets: [
-            {
-              label: "Number of Platforms",
-              data: [454, 451, 355, 283],
-              backgroundColor: [
-                "rgb(255, 210, 63)",
-                "rgb(255, 210, 63)",
-                "rgb(255, 210, 63)",
-                "rgb(255, 210, 63)",
-              ],
-              borderWidth: [0],
-            },
-          ],
+          borderWidth: 0,
+          barThickness: 80,
         },
-        options: {
-          responsive: true,
-
-          legend: {
-            labels: {
-              fontSize: 18,
-            },
-          },
-
-          scales: {
-            yAxes: [
-              {
-                display: false,
-                ticks: {
-                  suggestedMin: 100,
-                },
-              },
-            ],
-            xAxes: [
-              {
-                barThickness: 115,
-
-                ticks: {
-                  fontSize: 10,
-                  fontColor: "#1b014c",
-                  defaultFontStyle: "bold",
-
-                },
-              },
-            ],
-          },
-
-          animation: {
-            onComplete: function () {
-              var chartInstance = this.chart,
-                ctx = chartInstance.ctx;
-              ctx.font = Chart.helpers.fontString(
-                (Chart.fontSize = "17"),
-                Chart.defaults.global.defaultFontStyle,
-                Chart.defaults.global.defaultFontFamily
-              );
-              ctx.textAlign = "center";
-              ctx.textBaseline = "center";
-
-              this.data.datasets.forEach(function (dataset, i) {
-                var meta = chartInstance.controller.getDatasetMeta(i);
-
-                meta.data.forEach(function (bar, index) {
-                  var data = dataset.data[index];
-
-                  data > 0
-                    ? ctx.fillText(data, bar._model.x + 3, bar._model.y - 25)
-                    : "";
-                });
+        ],
+      },
+      options: {
+        animation: {
+          onComplete: function () {
+            var chartInstance = this.chart,
+              ctx = chartInstance.ctx;
+            ctx.font = Chart.helpers.fontString(Chart.fontSize = "12", Chart.defaults.global.defaultFontStyle, Chart.defaults.global.defaultFontFamily);
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'center';
+            this.data.datasets.forEach(function (dataset, i) {
+              var meta = chartInstance.controller.getDatasetMeta(i);
+              meta.data.forEach(function (bar, index) {
+                var data = dataset.data[index];
+                data > 0 ? ctx.fillText(data, bar._model.x + 3, bar._model.y - 10) : ''
               });
-            },
-          },
+            });
+          }
         },
-      });
-    </script>
-  </body>
+        title: {
+          display: true,
+          fontSize: 18,
+        },
+        legend: {
+          display: false,
+          fontSize: '12',
+          boxWidth: 0,
+          fontStyle: 'bold',
+          labels: {
+          }
+        },
+        scales: {
+          yAxes: [{
+            /*  barThickness:68, */
+            ticks: {
+              display: true,
+              beginAtZero: true,
+              
+              
+              /*   fontSize:"12",
+                beginAtZero: true,
+                suggestedMin:60 */
+            },
+            
+            scaleLabel:{
+                  display:true,
+                  labelString:'Number of platforms using standard',
+                  fontStyle: 'bold',
+                  fontColor:'black'
+                  
+                },
+
+          }],
+          xAxes: [{
+            categoryPercentage: 0.1,
+            barPercentage: 0.5,
+            barThickness: 84,
+            ticks: {
+              fontSize: 10,
+              fontStyle: 'bold',
+            },
+            gridLines: {
+              display: false
+            },
+            scaleLabel:{
+                  display:true,
+                  labelString:'Common Standard',
+                  fontStyle: 'bold',
+                  fontColor:'black'
+                  
+                },
+          }]
+        }
+      }
+    });
+  </script>
+</body>
+
 </html>
